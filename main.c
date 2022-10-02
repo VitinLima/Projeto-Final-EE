@@ -86,16 +86,16 @@ void updateMotor(){
     if(currentFloor==targetFloor){
         motorState = 0;
     } else if(currentFloor < targetFloor){
-//        if(motorState == 2){
-//            directionFlag = 1;
-//            TMR4_StartTimer();
-//        }
+        if(motorState == 2){
+            directionFlag = 1;
+            TMR4_StartTimer();
+        }
         motorState = 1;
     } else{
-//        if(motorState == 1){
-//            directionFlag = 1;
-//            TMR4_StartTimer();
-//        }
+        if(motorState == 1){
+            directionFlag = 1;
+            TMR4_StartTimer();
+        }
         motorState = 2;
     }
     controlMotor();
@@ -176,8 +176,9 @@ void S1_Interrupt(){
     }
     position = 0;
     currentFloor = 1;
-    DIR_SetHigh();
-//    updateMotor();
+    updateMotor();
+    targetFloor = 4;
+    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -186,9 +187,6 @@ void S2_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 2;
-//    DIR_SetHigh();
-    updateMotor();
-    targetFloor = 3;
     updateMotor();
 }
 
@@ -198,9 +196,6 @@ void S3_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 3;
-//    DIR_SetLow();
-    updateMotor();
-    targetFloor = 2;
     updateMotor();
 }
 
@@ -210,8 +205,9 @@ void S4_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 4;
-    DIR_SetLow();
-//    updateMotor();
+    updateMotor();
+    targetFloor = 1;
+    updateMotor();
 }
 
 
