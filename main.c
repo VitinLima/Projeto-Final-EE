@@ -55,7 +55,7 @@ uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t velocity_idx = 0;
 
 void controlMotor(){
-    if(false){//floorFlag || directionFlag){
+    if(floorFlag || directionFlag){
         PWM3_LoadDutyValue(0);
     } else{
         switch(motorState){
@@ -170,10 +170,10 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
 
 
 void S1_Interrupt(){
-//    if(targetFloor == 1 && currentFloor != 1){
-//        floorFlag = 1;
-//        TMR6_StartTimer();
-//    }
+    if(targetFloor == 1 && currentFloor != 1){
+        floorFlag = 1;
+        TMR6_StartTimer();
+    }
     position = 0;
     currentFloor = 1;
     DIR_SetHigh();
@@ -181,10 +181,10 @@ void S1_Interrupt(){
 }
 
 void S2_Interrupt(){
-//    if(targetFloor == 2 && currentFloor != 2){
-//        floorFlag = 1;
-//        TMR6_StartTimer();
-//    }
+    if(targetFloor == 2 && currentFloor != 2){
+        floorFlag = 1;
+        TMR6_StartTimer();
+    }
     currentFloor = 2;
 //    DIR_SetHigh();
     updateMotor();
@@ -193,10 +193,10 @@ void S2_Interrupt(){
 }
 
 void S3_Interrupt(){
-//    if(targetFloor == 3 && currentFloor != 3){
-//        floorFlag = 1;
-//        TMR6_StartTimer();
-//    }
+    if(targetFloor == 3 && currentFloor != 3){
+        floorFlag = 1;
+        TMR6_StartTimer();
+    }
     currentFloor = 3;
 //    DIR_SetLow();
     updateMotor();
@@ -205,10 +205,10 @@ void S3_Interrupt(){
 }
 
 void S4_Interrupt(){
-//    if(targetFloor == 3 && currentFloor != 3){
-//        floorFlag = 1;
-//        TMR6_StartTimer();
-//    }
+    if(targetFloor == 3 && currentFloor != 3){
+        floorFlag = 1;
+        TMR6_StartTimer();
+    }
     currentFloor = 4;
     DIR_SetLow();
 //    updateMotor();
