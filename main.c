@@ -170,11 +170,11 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
 
 
 void S1_Interrupt(){
+    position = 0;
     if(targetFloor == 1 && currentFloor != 1){
         floorFlag = 1;
         TMR6_StartTimer();
     }
-    position = 0;
     currentFloor = 1;
     updateMotor();
     targetFloor = 4;
@@ -200,7 +200,7 @@ void S3_Interrupt(){
 }
 
 void S4_Interrupt(){
-    if(targetFloor == 3 && currentFloor != 3){
+    if(targetFloor == 4 && currentFloor != 4){
         floorFlag = 1;
         TMR6_StartTimer();
     }
