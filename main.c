@@ -48,11 +48,9 @@ uint8_t currentFloor = 4;
 uint8_t targetFloor = 1;
 uint8_t motorLoading = 0;
 uint8_t motorState = 0;
-uint8_t position = 0;
-uint8_t velocity = 0;
+uint8_t position = 128;
 uint8_t data_tx[4];
-uint16_t pulse = 0;
-int Enc_pulse = 0;
+uint16_t period = 0;
 
 void controlMotor(){
     switch(motorState){
@@ -107,19 +105,20 @@ void TMR0_Interrupt(){
     p *= 180;
     p /= 215;
     
-    //0.83mm between pulses
-    //500ns timer in ccp4
+    //0.83 mm between pulses
+    //4 ns timer in timer 1
+    uint16_t v = 2075e2/period;
     
-    // LM35 2 - 150ºC, 10 mV/Cº
+    // LM35 2 - 150 ºC, 10 mV/Cº
     // ADC 10 bits, 0 - 2048 mV
-    uint32_t temperature = ADC_GetConversion(channel_AN2);
-    temperature = temperature<<12;
-    temperature /= 10230;
+    uint32_t t = ADC_GetConversion(channel_AN2);
+    t <<= 12;
+    t /= 10230;
     
-    data_tx[0] = 0x80|(((motorState<<4)|(currentFloor-1))&0xB3);
-    data_tx[1] = ((p>>1)&0x7F);
-    data_tx[2] = ((velocity<<2)&0x7F);
-    data_tx[3] = (temperature&0x7F);
+    data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
+    data_tx[1] = (p>>1) & 0x7F;
+    data_tx[2] = (v<<2) & 0x7F;
+    data_tx[3] = t & 0x7F;
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
@@ -146,7 +145,7 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
     } else{
         position--;
     }
-    velocity = 83e7/(int)capturedValue/5;
+    period = capturedValue;
 }
 
 
@@ -228,6 +227,10 @@ void main(void)
     
     while (1)
     {
+        __delay_ms(2000);
+        DIR_SetLow();
+        __delay_ms(2000);
+        DIR_SetHigh();
 //        if(EUSART_is_rx_ready()){
 //            while(EUSART_is_rx_ready()){
 //                receivedData = EUSART_Read();
