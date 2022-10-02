@@ -101,51 +101,29 @@ void updateMotor(){
 
 
 void TMR0_Interrupt(){
-    /*// LM35 2 - 150ºC, 10 mV/Cº
-    // ADC 10 bits, 0 - 2048 mV
-    // 2*temperature
-    uint32_t temperature = ADC_GetConversion(channel_AN2);
-    temperature = temperature<<12;
-    temperature /= 10230;
-    
-    // 180mm
+    // 180 mm
     // 215 pulses
-    // position/2
     uint16_t p = position;
-    p *= 180/215;
+    p *= 180;
+    p /= 215;
     
     //0.83mm between pulses
     //500ns timer in ccp4
     
-    if(TMR1_HasOverflowOccured()){
-        velocity = 0;
-    }
+    // LM35 2 - 150ºC, 10 mV/Cº
+    // ADC 10 bits, 0 - 2048 mV
+    uint32_t temperature = ADC_GetConversion(channel_AN2);
+    temperature = temperature<<12;
+    temperature /= 10230;
     
-    data_tx[0] = 0x80|(((motorState<<4)|(currentFloor-1))&0xB3);   // (informação + "10000000") AND "10110011"
-    data_tx[1] = ((p>>1)&0x7F); // Elevador's height
-    data_tx[2] = ((velocity<<2)&0x7F); // Elevador's velocity
-    data_tx[3] = (temperature&0x7F); // Motor's temperature
-    */
-    uint8_t b0 = 1;
-    uint8_t e0 = 1;
-    uint8_t b1 = 16;
-    uint8_t b2 = 3;
-    uint8_t b3 = 20;
-    
-    b0 = (b0-1)&0b00000011;
-    e0 = (e0<<4)&0b00000011;
-    b1 >>= 1;
-    b2 <<= 2;
-    b3 <<= 1;
-    
-    data_tx[0] = (0b10000000 | b0 | e0) & 0b10110011;
-    data_tx[1] = b1 & 0b01111111;
-    data_tx[2] = b2 & 0b01111111;
-    data_tx[3] = b3 & 0b01111111;
+    data_tx[0] = 0x80|(((motorState<<4)|(currentFloor-1))&0xB3);
+    data_tx[1] = ((p>>1)&0x7F);
+    data_tx[2] = ((velocity<<2)&0x7F);
+    data_tx[3] = (temperature&0x7F);
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
-            EUSART_Write(data_tx[i]);   // Envia todos os bytes do array
+            EUSART_Write(data_tx[i]);
         }
     }
 }
