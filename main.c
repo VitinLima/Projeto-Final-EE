@@ -169,11 +169,11 @@ void S1_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-//    DIR_SetHigh();
+    DIR_SetHigh();
     currentFloor = 1;
-    updateMotor();
-    targetFloor = 4;
-    updateMotor();
+//    updateMotor();
+//    targetFloor = 4;
+//    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -183,7 +183,7 @@ void S2_Interrupt(){
     }
 //    DIR_SetHigh();
     currentFloor = 2;
-    updateMotor();
+//    updateMotor();
 }
 
 void S3_Interrupt(){
@@ -193,7 +193,7 @@ void S3_Interrupt(){
     }
 //    DIR_SetLow();
     currentFloor = 3;
-    updateMotor();
+//    updateMotor();
 }
 
 void S4_Interrupt(){
@@ -201,11 +201,11 @@ void S4_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-//    DIR_SetLow();
+    DIR_SetLow();
     currentFloor = 4;
-    updateMotor();
-    targetFloor = 1;
-    updateMotor();
+//    updateMotor();
+//    targetFloor = 1;
+//    updateMotor();
 }
 
 
@@ -241,9 +241,8 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-//    PWM3_LoadDutyValue(409);
-//    DIR_SetHigh();
-    updateMotor();
+    PWM3_LoadDutyValue(409);
+    DIR_SetHigh();
     
     uint8_t receivedData = 0;
     
