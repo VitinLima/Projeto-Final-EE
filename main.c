@@ -50,8 +50,8 @@ uint8_t motorLoading = 0;
 uint8_t motorState = 0;
 uint8_t position = 128;
 uint8_t data_tx[4];
-uint16_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-uint8_t velocity_idx = 0;
+uint16_t period[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+uint8_t period_idx = 0;
 
 void controlMotor(){
     switch(motorState){
@@ -108,9 +108,9 @@ void TMR0_Interrupt(){
     
     //0.83 mm between pulses
     //4 ns timer in timer 1
-    uint16_t v = 0;
+    uint32_t v = 0;
     for(int i = 0; i < 16; i++){
-        v += velocity[i];
+        v += period[i];
     }
     v >>= 4;
     
@@ -151,13 +151,13 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
         position--;
     }
     if(TMR1_HasOverflowOccured()){
-        velocity[velocity_idx++] = 0;
+        period[period_idx++] = 65535;
         PIR1bits.TMR1IF = 0;
     } else{
-        velocity[velocity_idx++] = 2075e2/capturedValue;
+        period[period_idx++] = capturedValue;
     }
-    if(velocity_idx==16){
-        velocity_idx = 0;
+    if(period_idx==16){
+        period_idx = 0;
     }
 }
 
