@@ -61,6 +61,7 @@ void controlMotor(){
         switch(motorState){
             case 0:
                 PWM3_LoadDutyValue(0);
+                break;
             case 1:
                 DIR_SetHigh();
                 if(currentFloor == 4){
@@ -68,6 +69,7 @@ void controlMotor(){
                 } else{
                     PWM3_LoadDutyValue(409);
                 }
+                break;
             case 2:
                 DIR_SetLow();
                 if(currentFloor == 1){
@@ -75,6 +77,7 @@ void controlMotor(){
                 } else{
                     PWM3_LoadDutyValue(409);
                 }
+                break;
         }
     }
 }
@@ -184,9 +187,9 @@ void S2_Interrupt(){
 //    }
     currentFloor = 2;
 //    DIR_SetHigh();
-//    updateMotor();
-//    targetFloor = 3;
-//    updateMotor();
+    updateMotor();
+    targetFloor = 3;
+    updateMotor();
 }
 
 void S3_Interrupt(){
