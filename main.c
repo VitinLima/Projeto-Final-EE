@@ -124,7 +124,7 @@ void TMR0_Interrupt(){
     data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
     data_tx[1] = (p>>1) & 0x7F;
     data_tx[2] = (motorState<<2) & 0x7F;
-    data_tx[3] = t & 0x7F;
+    data_tx[3] = targetFloor<<1 & 0x7F;
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
@@ -172,8 +172,8 @@ void S1_Interrupt(){
 //        TMR6_StartTimer();
 //    }
     position = 0;
-    DIR_SetHigh();
     currentFloor = 1;
+    DIR_SetHigh();
 //    updateMotor();
 }
 
@@ -182,11 +182,11 @@ void S2_Interrupt(){
 //        floorFlag = 1;
 //        TMR6_StartTimer();
 //    }
-//    DIR_SetHigh();
     currentFloor = 2;
-    updateMotor();
-    targetFloor = 3;
-    updateMotor();
+//    DIR_SetHigh();
+//    updateMotor();
+//    targetFloor = 3;
+//    updateMotor();
 }
 
 void S3_Interrupt(){
@@ -194,8 +194,8 @@ void S3_Interrupt(){
 //        floorFlag = 1;
 //        TMR6_StartTimer();
 //    }
-//    DIR_SetLow();
     currentFloor = 3;
+//    DIR_SetLow();
     updateMotor();
     targetFloor = 2;
     updateMotor();
@@ -206,8 +206,8 @@ void S4_Interrupt(){
 //        floorFlag = 1;
 //        TMR6_StartTimer();
 //    }
-    DIR_SetLow();
     currentFloor = 4;
+    DIR_SetLow();
 //    updateMotor();
 }
 
