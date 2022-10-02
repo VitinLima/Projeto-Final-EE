@@ -220,18 +220,13 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    PWM3_LoadDutyValue(409);
+    PWM3_LoadDutyValue(0);
     DIR_SetHigh();
-    __delay_ms(2000);
     
     uint8_t receivedData = 0;
     
     while (1)
     {
-        __delay_ms(2000);
-        DIR_SetLow();
-        __delay_ms(2000);
-        DIR_SetHigh();
 //        if(EUSART_is_rx_ready()){
 //            while(EUSART_is_rx_ready()){
 //                receivedData = EUSART_Read();
