@@ -129,12 +129,12 @@ void TMR0_Interrupt(){
     uint8_t b0 = 1;
     uint8_t e0 = 1;
     uint8_t b1 = 50;
-    uint8_t b2 = 5;
+    uint8_t b2 = 3;
     uint8_t b3 = 20;
     data_tx[0] = ((0b10000000 | b0) | (e0<<4)) & 0b10110011;
-    data_tx[1] = (0b00000000 | b1>2) & 0b01111111;
-    data_tx[2] = (0b00000000 | b2<<4) & 0b01111111;
-    data_tx[3] = (0b00000000 | b3<2) & 0b01111111;
+    data_tx[1] = (0b00000000 | (b1>2)) & 0b01111111;
+    data_tx[2] = (0b00000000 | (b2<<4)) & 0b01111111;
+    data_tx[3] = (0b00000000 | (b3<2)) & 0b01111111;
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
