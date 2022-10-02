@@ -152,7 +152,7 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
     }
     if(TMR1_HasOverflowOccured()){
         velocity[velocity_idx++] = 0;
-        T1CONbits.TMR1ON = 0;
+        PIR1bits.TMR1IF = 0;
     } else{
         velocity[velocity_idx++] = 2075e2/capturedValue;
     }
