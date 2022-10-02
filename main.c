@@ -113,6 +113,7 @@ void TMR0_Interrupt(){
         v += period[i];
     }
     v >>= 4;
+    v = 2075e2/v;
     
     // LM35 2 - 150 ºC, 10 mV/Cº
     // ADC 10 bits, 0 - 2048 mV
