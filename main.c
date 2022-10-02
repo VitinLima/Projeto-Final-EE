@@ -145,7 +145,7 @@ void TMR6_Interrupt(){ // Espera de 2 s para mudança de passageiros
 }
 
 void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
-    if(DIR_getValue()){
+    if(DIR_GetValue()){
         position++;
     } else{
         position--;
