@@ -1,0 +1,21 @@
+build/default/production/_ext/1316310907/ledMatrix.p1:  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.c  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/mcc.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/device_config.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/pin_manager.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/interrupt_manager.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/spi1.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/cmp2.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/cmp1.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/ccp4.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/dac.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/tmr6.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/tmr4.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/tmr1.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/tmr2.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/tmr0.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/pwm3.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/memory.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/adc.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/mcc_generated_files/eusart.h  \
+C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.h 

@@ -1,0 +1,1240 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F1827 ]
+[d frameptr 6 ]
+"72 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
+[e E355 . `uc
+SPI1_DEFAULT 0
+]
+"85 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/adc.c
+[e E2485 . `uc
+channel_AN2 2
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"107 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[e E2966 . `uc
+channel_AN2 2
+channel_Temp 29
+channel_DAC 30
+channel_FVR 31
+]
+"74 C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.c
+[v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
+"105
+[v _updateMatrix updateMatrix `(v  1 e 1 0 ]
+"115
+[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
+"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"43 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"10 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"4 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"57 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _controlMotor controlMotor `(v  1 e 1 0 ]
+[v i1_controlMotor controlMotor `(v  1 e 1 0 ]
+"78
+[v _updateMotor updateMotor `(v  1 e 1 0 ]
+[v i1_updateMotor updateMotor `(v  1 e 1 0 ]
+"103
+[v _TMR0_Interrupt TMR0_Interrupt `(v  1 e 1 0 ]
+"136
+[v _TMR4_Interrupt TMR4_Interrupt `(v  1 e 1 0 ]
+"142
+[v _TMR6_Interrupt TMR6_Interrupt `(v  1 e 1 0 ]
+"148
+[v _CCP4_Interrupt CCP4_Interrupt `(v  1 e 1 0 ]
+"159
+[v _S1_Interrupt S1_Interrupt `(v  1 e 1 0 ]
+"169
+[v _S2_Interrupt S2_Interrupt `(v  1 e 1 0 ]
+"178
+[v _S3_Interrupt S3_Interrupt `(v  1 e 1 0 ]
+"187
+[v _S4_Interrupt S4_Interrupt `(v  1 e 1 0 ]
+"200
+[v _main main `(v  1 e 1 0 ]
+"67 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"112
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+"60 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/ccp4.c
+[v _CCP4_DefaultCallBack CCP4_DefaultCallBack `(v  1 s 1 CCP4_DefaultCallBack ]
+"65
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
+"89
+[v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
+"104
+[v _CCP4_SetCallBack CCP4_SetCallBack `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp1.c
+[v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
+"91
+[v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
+"105
+[v _CMP1_SetInterruptHandler CMP1_SetInterruptHandler `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp2.c
+[v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
+"91
+[v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
+"105
+[v _CMP2_SetInterruptHandler CMP2_SetInterruptHandler `(v  1 e 1 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/dac.c
+[v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
+"66 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"94
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+"99
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"144
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"146
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"154
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"52 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"50 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"71
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"81
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/memory.c
+[v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
+"95
+[v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
+"156
+[v _FLASH_EraseBlock FLASH_EraseBlock `(v  1 e 1 0 ]
+"211
+[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"119
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"136
+[v _IOCBF0_ISR IOCBF0_ISR `(v  1 e 1 0 ]
+"151
+[v _IOCBF0_SetInterruptHandler IOCBF0_SetInterruptHandler `(v  1 e 1 0 ]
+"158
+[v _IOCBF0_DefaultInterruptHandler IOCBF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"166
+[v _IOCBF3_ISR IOCBF3_ISR `(v  1 e 1 0 ]
+"181
+[v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
+"188
+[v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+"82
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+[v i1_PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+"62 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+"92
+[v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
+"131
+[v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+"125
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+"129
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"63 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"113
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"150
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+"62 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+"87
+[v _TMR4_StartTimer TMR4_StartTimer `(v  1 e 1 0 ]
+[v i1_TMR4_StartTimer TMR4_StartTimer `(v  1 e 1 0 ]
+"93
+[v _TMR4_StopTimer TMR4_StopTimer `(v  1 e 1 0 ]
+"108
+[v _TMR4_WriteTimer TMR4_WriteTimer `(v  1 e 1 0 ]
+"119
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+"137
+[v _TMR4_CallBack TMR4_CallBack `(v  1 e 1 0 ]
+"147
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+"151
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+"87
+[v _TMR6_StartTimer TMR6_StartTimer `(v  1 e 1 0 ]
+"93
+[v _TMR6_StopTimer TMR6_StopTimer `(v  1 e 1 0 ]
+"108
+[v _TMR6_WriteTimer TMR6_WriteTimer `(v  1 e 1 0 ]
+"119
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+"137
+[v _TMR6_CallBack TMR6_CallBack `(v  1 e 1 0 ]
+"147
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+"151
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+"13 C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.h
+[v _matrix matrix `[8]uc  1 e 8 0 ]
+[s S347 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"375 D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\pic\include\proc\pic16f1827.h
+[s S356 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S361 . 1 `S347 1 . 1 0 `S356 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES361  1 e 1 @11 ]
+[s S81 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"571
+[u S90 . 1 `S81 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES90  1 e 1 @17 ]
+[s S444 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 C1IF 1 0 :1:5 
+`uc 1 C2IF 1 0 :1:6 
+`uc 1 OSFIF 1 0 :1:7 
+]
+"632
+[u S452 . 1 `S444 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES452  1 e 1 @18 ]
+[s S404 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IF 1 0 :1:3 
+`uc 1 CCP3IF 1 0 :1:4 
+`uc 1 CCP4IF 1 0 :1:5 
+]
+"682
+[u S411 . 1 `S404 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES411  1 e 1 @19 ]
+"733
+[v _TMR0 TMR0 `VEuc  1 e 1 @21 ]
+"760
+[v _TMR1L TMR1L `VEuc  1 e 1 @22 ]
+"780
+[v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
+"800
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+[s S944 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+"822
+[s S953 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+[u S957 . 1 `S944 1 . 1 0 `S953 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES957  1 e 1 @24 ]
+"872
+[v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
+[s S974 . 1 `uc 1 T1GSS0 1 0 :1:0 
+`uc 1 T1GSS1 1 0 :1:1 
+`uc 1 T1GVAL 1 0 :1:2 
+`uc 1 T1GGO 1 0 :1:3 
+`uc 1 T1GSPM 1 0 :1:4 
+`uc 1 T1GTM 1 0 :1:5 
+`uc 1 T1GPOL 1 0 :1:6 
+`uc 1 TMR1GE 1 0 :1:7 
+]
+"892
+[s S983 . 1 `uc 1 T1GSS 1 0 :2:0 
+]
+[u S985 . 1 `S974 1 . 1 0 `S983 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES985  1 e 1 @25 ]
+"942
+[v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
+"962
+[v _PR2 PR2 `VEuc  1 e 1 @27 ]
+"982
+[v _T2CON T2CON `VEuc  1 e 1 @28 ]
+[s S882 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+"1003
+[s S890 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS 1 0 :4:3 
+]
+[u S894 . 1 `S882 1 . 1 0 `S890 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES894  1 e 1 @28 ]
+"1153
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+"1215
+[v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S30 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1232
+[u S39 . 1 `S30 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES39  1 e 1 @141 ]
+[s S425 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 C1IE 1 0 :1:5 
+`uc 1 C2IE 1 0 :1:6 
+`uc 1 OSFIE 1 0 :1:7 
+]
+"1355
+[u S433 . 1 `S425 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES433  1 e 1 @146 ]
+[s S387 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TMR4IE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TMR6IE 1 0 :1:3 
+`uc 1 CCP3IE 1 0 :1:4 
+`uc 1 CCP4IE 1 0 :1:5 
+]
+"1405
+[u S394 . 1 `S387 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES394  1 e 1 @147 ]
+"1456
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
+[s S528 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1479
+[s S537 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S542 . 1 `S528 1 . 1 0 `S537 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES542  1 e 1 @149 ]
+"1590
+[v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
+"1649
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @152 ]
+"1707
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+"1848
+[v _ADRESL ADRESL `VEuc  1 e 1 @155 ]
+"1868
+[v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
+"1888
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
+[s S1088 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 GO_nDONE 1 0 :1:1 
+`uc 1 CHS0 1 0 :1:2 
+`uc 1 CHS1 1 0 :1:3 
+`uc 1 CHS2 1 0 :1:4 
+`uc 1 CHS3 1 0 :1:5 
+`uc 1 CHS4 1 0 :1:6 
+]
+"1913
+[s S1096 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADGO 1 0 :1:1 
+`uc 1 CHS 1 0 :5:2 
+]
+[s S1100 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 GO 1 0 :1:1 
+]
+[u S1103 . 1 `S1088 1 . 1 0 `S1096 1 . 1 0 `S1100 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1103  1 e 1 @157 ]
+"1968
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
+"2040
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+[s S1525 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"2057
+[u S1534 . 1 `S1525 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1534  1 e 1 @268 ]
+"2097
+[v _LATB LATB `VEuc  1 e 1 @269 ]
+[s S1672 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"2114
+[u S1681 . 1 `S1672 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1681  1 e 1 @269 ]
+"2159
+[v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
+"2216
+[v _CM1CON1 CM1CON1 `VEuc  1 e 1 @274 ]
+"2282
+[v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
+"2339
+[v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
+[s S1270 . 1 `uc 1 MC1OUT 1 0 :1:0 
+`uc 1 MC2OUT 1 0 :1:1 
+]
+"2416
+[u S1273 . 1 `S1270 1 . 1 0 ]
+[v _CMOUTbits CMOUTbits `VES1273  1 e 1 @277 ]
+"2431
+[v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2534
+[v _DACCON0 DACCON0 `VEuc  1 e 1 @280 ]
+"2595
+[v _DACCON1 DACCON1 `VEuc  1 e 1 @281 ]
+"2780
+[v _APFCON0 APFCON0 `VEuc  1 e 1 @285 ]
+"2842
+[v _APFCON1 APFCON1 `VEuc  1 e 1 @286 ]
+"2862
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"2914
+[v _ANSELB ANSELB `VEuc  1 e 1 @397 ]
+"2986
+[v _EEADRL EEADRL `VEuc  1 e 1 @401 ]
+"3006
+[v _EEADRH EEADRH `VEuc  1 e 1 @402 ]
+"3033
+[v _EEDATL EEDATL `VEuc  1 e 1 @403 ]
+"3071
+[v _EEDATH EEDATH `VEuc  1 e 1 @404 ]
+[s S1169 . 1 `uc 1 RD 1 0 :1:0 
+`uc 1 WR 1 0 :1:1 
+`uc 1 WREN 1 0 :1:2 
+`uc 1 WRERR 1 0 :1:3 
+`uc 1 FREE 1 0 :1:4 
+`uc 1 LWLO 1 0 :1:5 
+`uc 1 CFGS 1 0 :1:6 
+`uc 1 EEPGD 1 0 :1:7 
+]
+"3108
+[u S1178 . 1 `S1169 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1178  1 e 1 @405 ]
+"3153
+[v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
+"3173
+[v _RCREG RCREG `VEuc  1 e 1 @409 ]
+"3193
+[v _TXREG TXREG `VEuc  1 e 1 @410 ]
+"3229
+[v _SPBRGL SPBRGL `VEuc  1 e 1 @411 ]
+"3279
+[v _SPBRGH SPBRGH `VEuc  1 e 1 @412 ]
+"3312
+[v _RCSTA RCSTA `VEuc  1 e 1 @413 ]
+[s S274 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"3329
+[u S283 . 1 `S274 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES283  1 e 1 @413 ]
+"3374
+[v _TXSTA TXSTA `VEuc  1 e 1 @414 ]
+[s S253 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"3391
+[u S262 . 1 `S253 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES262  1 e 1 @414 ]
+"3436
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @415 ]
+"3488
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3517
+[v _WPUB WPUB `VEuc  1 e 1 @525 ]
+"3587
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3625
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3701
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+"3823
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S51 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3852
+[s S60 . 1 `uc 1 SSPM 1 0 :4:0 
+]
+[u S62 . 1 `S51 1 . 1 0 `S60 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES62  1 e 1 @533 ]
+"4027
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+[s S156 . 1 `uc 1 C1TSEL0 1 0 :1:0 
+`uc 1 C1TSEL1 1 0 :1:1 
+`uc 1 C2TSEL0 1 0 :1:2 
+`uc 1 C2TSEL1 1 0 :1:3 
+`uc 1 C3TSEL0 1 0 :1:4 
+`uc 1 C3TSEL1 1 0 :1:5 
+`uc 1 C4TSEL0 1 0 :1:6 
+`uc 1 C4TSEL1 1 0 :1:7 
+]
+"5506
+[s S165 . 1 `uc 1 C1TSEL 1 0 :2:0 
+`uc 1 C2TSEL 1 0 :2:2 
+`uc 1 C3TSEL 1 0 :2:4 
+`uc 1 C4TSEL 1 0 :2:6 
+]
+[u S170 . 1 `S156 1 . 1 0 `S165 1 . 1 0 ]
+[v _CCPTMRS0bits CCPTMRS0bits `VES170  1 e 1 @670 ]
+"5578
+[v _CCPR3L CCPR3L `VEuc  1 e 1 @785 ]
+"5598
+[v _CCPR3H CCPR3H `VEuc  1 e 1 @786 ]
+"5618
+[v _CCP3CON CCP3CON `VEuc  1 e 1 @787 ]
+"5689
+[v _CCPR4L CCPR4L `VEuc  1 e 1 @792 ]
+"5709
+[v _CCPR4H CCPR4H `VEuc  1 e 1 @793 ]
+"5729
+[v _CCP4CON CCP4CON `VEuc  1 e 1 @794 ]
+[s S614 . 1 `uc 1 IOCBP0 1 0 :1:0 
+`uc 1 IOCBP1 1 0 :1:1 
+`uc 1 IOCBP2 1 0 :1:2 
+`uc 1 IOCBP3 1 0 :1:3 
+`uc 1 IOCBP4 1 0 :1:4 
+`uc 1 IOCBP5 1 0 :1:5 
+`uc 1 IOCBP6 1 0 :1:6 
+`uc 1 IOCBP7 1 0 :1:7 
+]
+"5813
+[s S623 . 1 `uc 1 IOCBP 1 0 :8:0 
+]
+[u S625 . 1 `S614 1 . 1 0 `S623 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES625  1 e 1 @916 ]
+[s S588 . 1 `uc 1 IOCBN0 1 0 :1:0 
+`uc 1 IOCBN1 1 0 :1:1 
+`uc 1 IOCBN2 1 0 :1:2 
+`uc 1 IOCBN3 1 0 :1:3 
+`uc 1 IOCBN4 1 0 :1:4 
+`uc 1 IOCBN5 1 0 :1:5 
+`uc 1 IOCBN6 1 0 :1:6 
+`uc 1 IOCBN7 1 0 :1:7 
+]
+"5883
+[s S597 . 1 `uc 1 IOCBN 1 0 :8:0 
+]
+[u S599 . 1 `S588 1 . 1 0 `S597 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES599  1 e 1 @917 ]
+[s S562 . 1 `uc 1 IOCBF0 1 0 :1:0 
+`uc 1 IOCBF1 1 0 :1:1 
+`uc 1 IOCBF2 1 0 :1:2 
+`uc 1 IOCBF3 1 0 :1:3 
+`uc 1 IOCBF4 1 0 :1:4 
+`uc 1 IOCBF5 1 0 :1:5 
+`uc 1 IOCBF6 1 0 :1:6 
+`uc 1 IOCBF7 1 0 :1:7 
+]
+"5953
+[s S571 . 1 `uc 1 IOCBF 1 0 :8:0 
+]
+[u S573 . 1 `S562 1 . 1 0 `S571 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES573  1 e 1 @918 ]
+"6313
+[v _TMR4 TMR4 `VEuc  1 e 1 @1045 ]
+"6333
+[v _PR4 PR4 `VEuc  1 e 1 @1046 ]
+"6353
+[v _T4CON T4CON `VEuc  1 e 1 @1047 ]
+[s S1424 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+`uc 1 T4CKPS1 1 0 :1:1 
+`uc 1 TMR4ON 1 0 :1:2 
+`uc 1 T4OUTPS0 1 0 :1:3 
+`uc 1 T4OUTPS1 1 0 :1:4 
+`uc 1 T4OUTPS2 1 0 :1:5 
+`uc 1 T4OUTPS3 1 0 :1:6 
+]
+"6374
+[s S1432 . 1 `uc 1 T4CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T4OUTPS 1 0 :4:3 
+]
+[u S1436 . 1 `S1424 1 . 1 0 `S1432 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1436  1 e 1 @1047 ]
+"6424
+[v _TMR6 TMR6 `VEuc  1 e 1 @1052 ]
+"6444
+[v _PR6 PR6 `VEuc  1 e 1 @1053 ]
+"6464
+[v _T6CON T6CON `VEuc  1 e 1 @1054 ]
+[s S1331 . 1 `uc 1 T6CKPS0 1 0 :1:0 
+`uc 1 T6CKPS1 1 0 :1:1 
+`uc 1 TMR6ON 1 0 :1:2 
+`uc 1 T6OUTPS0 1 0 :1:3 
+`uc 1 T6OUTPS1 1 0 :1:4 
+`uc 1 T6OUTPS2 1 0 :1:5 
+`uc 1 T6OUTPS3 1 0 :1:6 
+]
+"6485
+[s S1339 . 1 `uc 1 T6CKPS 1 0 :2:0 
+`uc 1 . 1 0 :1:2 
+`uc 1 T6OUTPS 1 0 :4:3 
+]
+[u S1343 . 1 `S1331 1 . 1 0 `S1339 1 . 1 0 ]
+[v _T6CONbits T6CONbits `VES1343  1 e 1 @1054 ]
+"47 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _currentFloor currentFloor `uc  1 e 1 0 ]
+"48
+[v _targetFloor targetFloor `uc  1 e 1 0 ]
+"49
+[v _motorLoading motorLoading `uc  1 e 1 0 ]
+"50
+[v _motorState motorState `uc  1 e 1 0 ]
+"51
+[v _position position `uc  1 e 1 0 ]
+"52
+[v _velocity velocity `uc  1 e 1 0 ]
+"53
+[v _data_tx data_tx `[4]uc  1 e 4 0 ]
+"54 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/ccp4.c
+[v _CCP4_CallBack CCP4_CallBack `*.37(v  1 s 2 CCP4_CallBack ]
+"59 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp1.c
+[v _CMP1_InterruptHandler CMP1_InterruptHandler `*.37(v  1 e 2 0 ]
+"59 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp2.c
+[v _CMP2_InterruptHandler CMP2_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S195 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"52 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
+[u S200 . 1 `S195 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxLastError eusartRxLastError `VES200  1 e 1 0 ]
+"58
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"59
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"60
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"54 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pin_manager.c
+[v _IOCBF0_InterruptHandler IOCBF0_InterruptHandler `*.37(v  1 e 2 0 ]
+"55
+[v _IOCBF3_InterruptHandler IOCBF3_InterruptHandler `*.37(v  1 e 2 0 ]
+[s S22 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
+[v _spi1_configuration spi1_configuration `DC[1]S22  1 s 4 spi1_configuration ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"59
+[v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
+"57 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_InterruptHandler TMR6_InterruptHandler `*.37(v  1 e 2 0 ]
+"200 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"242
+[v main@direction direction `uc  1 a 1 7 ]
+"229
+[v main@receivedData receivedData `uc  1 a 1 6 ]
+"255
+} 0
+"78
+[v _updateMotor updateMotor `(v  1 e 1 0 ]
+{
+"99
+} 0
+"57
+[v _controlMotor controlMotor `(v  1 e 1 0 ]
+{
+"76
+} 0
+"82 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pwm3.c
+[v _PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"89
+} 0
+"87 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_StartTimer TMR4_StartTimer `(v  1 e 1 0 ]
+{
+"91
+} 0
+"105 C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.c
+[v _updateMatrix updateMatrix `(v  1 e 1 0 ]
+{
+[v updateMatrix@pos pos `uc  1 a 1 wreg ]
+"110
+[v updateMatrix@i i `uc  1 a 1 5 ]
+"109
+[v updateMatrix@eeAdd eeAdd `uc  1 a 1 4 ]
+"105
+[v updateMatrix@pos pos `uc  1 a 1 wreg ]
+[v updateMatrix@val val `uc  1 p 1 1 ]
+"109
+[v updateMatrix@pos pos `uc  1 a 1 3 ]
+"113
+} 0
+"211 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/memory.c
+[v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
+{
+[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 wreg ]
+[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 wreg ]
+"213
+[v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 0 ]
+"221
+} 0
+"115 C:/Users/160047412/Desktop/ProjetoFinal.X/ledMatrix.c
+[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
+{
+"116
+[v sendMatrix@i i `uc  1 a 1 4 ]
+"123
+} 0
+"74
+[v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
+{
+[v txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
+[v txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
+[v txMAX7219@dat0 dat0 `uc  1 p 1 1 ]
+[v txMAX7219@addr0 addr0 `uc  1 a 1 2 ]
+"83
+} 0
+"131 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
+[v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
+{
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+"133
+[v SPI1_WriteByte@byte byte `uc  1 a 1 0 ]
+"134
+} 0
+"50 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"69
+} 0
+"81
+[v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"147
+[v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"149
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"147
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"149
+} 0
+"62 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"77
+} 0
+"63 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"85
+} 0
+"125
+[v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"127
+} 0
+"62 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+{
+"70
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pwm3.c
+[v _PWM3_Initialize PWM3_Initialize `(v  1 e 1 0 ]
+{
+"80
+} 0
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"117
+} 0
+"181
+[v _IOCBF3_SetInterruptHandler IOCBF3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"183
+} 0
+"151
+[v _IOCBF0_SetInterruptHandler IOCBF0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"153
+} 0
+"71 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"79
+} 0
+"66 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"92
+} 0
+"161
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"163
+} 0
+"157
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"159
+} 0
+"165
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"167
+} 0
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/dac.c
+[v _DAC_Initialize DAC_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp2.c
+[v _CMP2_Initialize CMP2_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp1.c
+[v _CMP1_Initialize CMP1_Initialize `(v  1 e 1 0 ]
+{
+"84
+} 0
+"65 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/ccp4.c
+[v _CCP4_Initialize CCP4_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"104
+[v _CCP4_SetCallBack CCP4_SetCallBack `(v  1 e 1 0 ]
+{
+[v CCP4_SetCallBack@customCallBack customCallBack `*.37(v  1 p 2 0 ]
+"106
+} 0
+"67 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"99 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(a  1 e 1 0 ]
+{
+"102
+} 0
+"113
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"130
+} 0
+"105 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp2.c
+[v _CMP2_SetInterruptHandler CMP2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v CMP2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"107
+} 0
+"105 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp1.c
+[v _CMP1_SetInterruptHandler CMP1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v CMP1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"107
+} 0
+"52 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"94
+} 0
+"119 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_ISR TMR6_ISR `(v  1 e 1 0 ]
+{
+"121
+[v TMR6_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"135
+} 0
+"137
+[v _TMR6_CallBack TMR6_CallBack `(v  1 e 1 0 ]
+{
+"145
+} 0
+"151
+[v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"154
+} 0
+"142 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _TMR6_Interrupt TMR6_Interrupt `(v  1 e 1 0 ]
+{
+"146
+} 0
+"108 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_WriteTimer TMR6_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+"111
+[v TMR6_WriteTimer@timerVal timerVal `uc  1 a 1 0 ]
+"112
+} 0
+"93
+[v _TMR6_StopTimer TMR6_StopTimer `(v  1 e 1 0 ]
+{
+"97
+} 0
+"119 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+{
+"121
+[v TMR4_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"135
+} 0
+"137
+[v _TMR4_CallBack TMR4_CallBack `(v  1 e 1 0 ]
+{
+"145
+} 0
+"151
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"154
+} 0
+"136 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _TMR4_Interrupt TMR4_Interrupt `(v  1 e 1 0 ]
+{
+"140
+} 0
+"108 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v _TMR4_WriteTimer TMR4_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR4_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+[v TMR4_WriteTimer@timerVal timerVal `uc  1 a 1 wreg ]
+"111
+[v TMR4_WriteTimer@timerVal timerVal `uc  1 a 1 0 ]
+"112
+} 0
+"93
+[v _TMR4_StopTimer TMR4_StopTimer `(v  1 e 1 0 ]
+{
+"97
+} 0
+"108 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
+[v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
+{
+"122
+} 0
+"129
+[v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"132
+} 0
+"103 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _TMR0_Interrupt TMR0_Interrupt `(v  1 e 1 0 ]
+{
+"130
+[v TMR0_Interrupt@i i `i  1 a 2 4 ]
+"107
+[v TMR0_Interrupt@temperature temperature `ul  1 a 4 6 ]
+"134
+} 0
+"5 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 9 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lldiv@divisor divisor `ul  1 p 4 0 ]
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+"30
+} 0
+"150 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr1.c
+[v _TMR1_HasOverflowOccured TMR1_HasOverflowOccured `(a  1 e 1 0 ]
+{
+"154
+} 0
+"94 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(a  1 e 1 0 ]
+{
+"97
+} 0
+"132
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"112 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E2485  1 a 1 wreg ]
+[v ADC_GetConversion@channel channel `E2485  1 a 1 wreg ]
+"115
+[v ADC_GetConversion@channel channel `E2485  1 a 1 3 ]
+"133
+} 0
+"119 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"131
+} 0
+"166
+[v _IOCBF3_ISR IOCBF3_ISR `(v  1 e 1 0 ]
+{
+"176
+} 0
+"188
+[v _IOCBF3_DefaultInterruptHandler IOCBF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"191
+} 0
+"169 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _S2_Interrupt S2_Interrupt `(v  1 e 1 0 ]
+{
+"176
+} 0
+"136 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pin_manager.c
+[v _IOCBF0_ISR IOCBF0_ISR `(v  1 e 1 0 ]
+{
+"146
+} 0
+"158
+[v _IOCBF0_DefaultInterruptHandler IOCBF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"161
+} 0
+"159 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _S1_Interrupt S1_Interrupt `(v  1 e 1 0 ]
+{
+"167
+} 0
+"91 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp2.c
+[v _CMP2_ISR CMP2_ISR `(v  1 e 1 0 ]
+{
+"102
+} 0
+"187 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _S4_Interrupt S4_Interrupt `(v  1 e 1 0 ]
+{
+"194
+} 0
+"91 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/cmp1.c
+[v _CMP1_ISR CMP1_ISR `(v  1 e 1 0 ]
+{
+"102
+} 0
+"178 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _S3_Interrupt S3_Interrupt `(v  1 e 1 0 ]
+{
+"185
+} 0
+"78
+[v i1_updateMotor updateMotor `(v  1 e 1 0 ]
+{
+"99
+} 0
+"57
+[v i1_controlMotor controlMotor `(v  1 e 1 0 ]
+{
+"76
+} 0
+"82 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/pwm3.c
+[v i1_PWM3_LoadDutyValue PWM3_LoadDutyValue `(v  1 e 1 0 ]
+{
+[v i1PWM3_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
+"89
+} 0
+"87 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr4.c
+[v i1_TMR4_StartTimer TMR4_StartTimer `(v  1 e 1 0 ]
+{
+"91
+} 0
+"87 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
+[v _TMR6_StartTimer TMR6_StartTimer `(v  1 e 1 0 ]
+{
+"91
+} 0
+"89 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/ccp4.c
+[v _CCP4_CaptureISR CCP4_CaptureISR `(v  1 e 1 0 ]
+{
+[s S772 . 2 `uc 1 ccpr4l 1 0 `uc 1 ccpr4h 1 1 ]
+"91
+[s S775 . 2 `us 1 ccpr4_16Bit 2 0 ]
+[u S777 CCPR4Reg_tag 2 `S772 1 . 2 0 `S775 1 . 2 0 ]
+[v CCP4_CaptureISR@module module `S777  1 a 2 43 ]
+"102
+} 0
+"60
+[v _CCP4_DefaultCallBack CCP4_DefaultCallBack `(v  1 s 1 CCP4_DefaultCallBack ]
+{
+"63
+} 0
+"148 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
+[v _CCP4_Interrupt CCP4_Interrupt `(v  1 e 1 0 ]
+{
+[v CCP4_Interrupt@capturedValue capturedValue `us  1 p 2 36 ]
+"155
+} 0
+"10 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"43 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 35 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 34 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 26 ]
+"70
+} 0
+"8 D:\ProgramData\Microchip\xc8\v2.40\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
+"8
+[v ___fldiv@a a `d  1 p 4 0 ]
+[v ___fldiv@b b `d  1 p 4 4 ]
+"185
+} 0
