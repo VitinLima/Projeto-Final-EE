@@ -101,7 +101,7 @@ void updateMotor(){
 
 
 void TMR0_Interrupt(){
-    // LM35 2 - 150ºC, 10 mV/Cº
+    /*// LM35 2 - 150ºC, 10 mV/Cº
     // ADC 10 bits, 0 - 2048 mV
     // 2*temperature
     uint32_t temperature = ADC_GetConversion(channel_AN2);
@@ -125,6 +125,16 @@ void TMR0_Interrupt(){
     data_tx[1] = ((p>>1)&0x7F); // Elevador's height
     data_tx[2] = ((velocity<<2)&0x7F); // Elevador's velocity
     data_tx[3] = (temperature&0x7F); // Motor's temperature
+    */
+    uint8_t b0 = 1;
+    uint8_t e0 = 1;
+    uint8_t b1 = 50;
+    uint8_t b2 = 5;
+    uint8_t b3 = 20;
+    data_tx[0] = ((0b10000000 | b0) | (e0<<4)) & 0b10110011;
+    data_tx[1] = (0b00000000 | b1>2) & 0b01111111;
+    data_tx[2] = (0b00000000 | b2<<4) & 0b01111111;
+    data_tx[3] = (0b00000000 | b3<2) & 0b01111111;
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
@@ -230,27 +240,27 @@ void main(void)
     
     while (1)
     {
-        if(EUSART_is_rx_ready()){
-            while(EUSART_is_rx_ready()){
-                receivedData = EUSART_Read();
-            }
-            targetFloor = receivedData+1;
-        }
-        
-        updateMatrix(0, currentFloor);
-        
-        uint8_t direction = 0;
-        if(motorState==0){
-            direction = 12;
-        } else if(motorState==1){
-            direction = 10;
-        } else{
-            direction = 11;
-        }
-        
-        updateMatrix(4, direction);
-        sendMatrix();
-        updateMotor();
+//        if(EUSART_is_rx_ready()){
+//            while(EUSART_is_rx_ready()){
+//                receivedData = EUSART_Read();
+//            }
+//            targetFloor = receivedData+1;
+//        }
+//        
+//        updateMatrix(0, currentFloor);
+//        
+//        uint8_t direction = 0;
+//        if(motorState==0){
+//            direction = 12;
+//        } else if(motorState==1){
+//            direction = 10;
+//        } else{
+//            direction = 11;
+//        }
+//        
+//        updateMatrix(4, direction);
+//        sendMatrix();
+//        updateMotor();
     }
 }
 /**
