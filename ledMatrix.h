@@ -29,7 +29,7 @@ void initMAX7219();
  * @param pos Posição de inicio do caracter na matriz de LEDs (número do registrador)
  * @param val Valor a ser exibido
  */
-void updateMatrix(uint8_t pos, uint8_t val);
+void setMatrix(uint8_t pos, uint8_t val);
 /**
  * Envia matriz para os MAX7219
  */
