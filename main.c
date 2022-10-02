@@ -172,6 +172,8 @@ void S1_Interrupt(){
 //    DIR_SetHigh();
     currentFloor = 1;
     updateMotor();
+    targetFloor = 4;
+    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -182,7 +184,6 @@ void S2_Interrupt(){
 //    DIR_SetHigh();
     currentFloor = 2;
     updateMotor();
-    targetFloor = 4;
 }
 
 void S3_Interrupt(){
@@ -241,6 +242,7 @@ void main(void)
     
 //    PWM3_LoadDutyValue(409);
 //    DIR_SetHigh();
+    updateMotor();
     
     uint8_t receivedData = 0;
     
