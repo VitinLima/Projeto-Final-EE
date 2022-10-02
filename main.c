@@ -151,10 +151,10 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
         position--;
     }
     if(TMR1_HasOverflowOccured()){
-        velocity[velocity_idx++] = 14;
+        velocity[velocity_idx++] = 0;
         PIR1bits.TMR1IF = 0;
     } else{
-        velocity[velocity_idx++] = 14;//(uint16_t)(2075e2/(uint32_t)capturedValue);
+        velocity[velocity_idx++] = (uint16_t)(2075e2/(uint32_t)capturedValue);
     }
     if(velocity_idx>15){
         velocity_idx = 0;
