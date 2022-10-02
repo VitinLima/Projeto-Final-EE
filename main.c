@@ -236,6 +236,9 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
+    PWM3_LoadDutyValue(0);
+    DIR_SetHigh();
+    
     uint8_t receivedData = 0;
     
     while (1)
