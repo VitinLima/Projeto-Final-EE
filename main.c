@@ -177,8 +177,6 @@ void S1_Interrupt(){
     }
     currentFloor = 1;
     updateMotor();
-    targetFloor = 4;
-    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -205,8 +203,6 @@ void S4_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 4;
-    updateMotor();
-    targetFloor = 1;
     updateMotor();
 }
 
@@ -255,7 +251,9 @@ void main(void)
                 receivedData = EUSART_Read();
             }
             targetFloor = receivedData+1;
-            updateMotor();
+            if(motorState==0){
+                updateMotor();
+            }
         }
 //        
 //        updateMatrix(0, currentFloor);
