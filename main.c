@@ -54,7 +54,7 @@ uint8_t data_tx[4];
 uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t velocity_idx = 0;
 
-void controlMotor(){
+void sendMotor(){
     if(floorFlag || directionFlag){
         PWM3_LoadDutyValue(0);
     } else{
@@ -98,10 +98,24 @@ void updateMotor(){
         }
         motorState = 2;
     }
-    controlMotor();
+    sendMotor();
 }
 
+void updateMatrix(){
+    setMatrix(0, currentFloor);
 
+    uint8_t direction = 0;
+    if(motorState==0){
+        direction = 12;
+    } else if(motorState==1){
+        direction = 10;
+    } else{
+        direction = 11;
+    }
+
+    setMatrix(4, direction);
+    sendMatrix();
+}
 
 void TMR0_Interrupt(){
     // 180 mm
@@ -126,8 +140,8 @@ void TMR0_Interrupt(){
     
     data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
     data_tx[1] = (p>>1) & 0x7F;
-    data_tx[2] = (motorState<<2) & 0x7F;
-    data_tx[3] = targetFloor<<1 & 0x7F;
+    data_tx[2] = (v<<2) & 0x7F;
+    data_tx[3] = t<<1 & 0x7F;
     
     if(EUSART_is_tx_ready()){
         for(int i = 0; i<4; i++){
@@ -141,6 +155,7 @@ void TMR4_Interrupt(){ // Espera de 500 ms para mudança de direção
     TMR4_WriteTimer(0);
     directionFlag = 0;
     updateMotor();
+    updateMatrix();
 }
 
 void TMR6_Interrupt(){ // Espera de 2 s para mudança de passageiros
@@ -148,6 +163,7 @@ void TMR6_Interrupt(){ // Espera de 2 s para mudança de passageiros
     TMR6_WriteTimer(0);
     floorFlag = 0;
     updateMotor();
+    updateMatrix();
 }
 
 void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
@@ -177,6 +193,7 @@ void S1_Interrupt(){
     }
     currentFloor = 1;
     updateMotor();
+    updateMatrix();
 }
 
 void S2_Interrupt(){
@@ -186,6 +203,7 @@ void S2_Interrupt(){
     }
     currentFloor = 2;
     updateMotor();
+    updateMatrix();
 }
 
 void S3_Interrupt(){
@@ -195,6 +213,7 @@ void S3_Interrupt(){
     }
     currentFloor = 3;
     updateMotor();
+    updateMatrix();
 }
 
 void S4_Interrupt(){
@@ -204,6 +223,7 @@ void S4_Interrupt(){
     }
     currentFloor = 4;
     updateMotor();
+    updateMatrix();
 }
 
 
@@ -253,22 +273,9 @@ void main(void)
             targetFloor = receivedData+1;
             if(motorState==0){
                 updateMotor();
+                updateMatrix();
             }
         }
-//        
-//        updateMatrix(0, currentFloor);
-//        
-//        uint8_t direction = 0;
-//        if(motorState==0){
-//            direction = 12;
-//        } else if(motorState==1){
-//            direction = 10;
-//        } else{
-//            direction = 11;
-//        }
-//        
-//        updateMatrix(4, direction);
-//        sendMatrix();
     }
 }
 /**
