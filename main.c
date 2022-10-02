@@ -248,12 +248,12 @@ void main(void)
     
     while (1)
     {
-//        if(EUSART_is_rx_ready()){
-//            while(EUSART_is_rx_ready()){
-//                receivedData = EUSART_Read();
-//            }
-//            targetFloor = receivedData+1;
-//        }
+        if(EUSART_is_rx_ready()){
+            while(EUSART_is_rx_ready()){
+                receivedData = EUSART_Read();
+            }
+            targetFloor = receivedData+1;
+        }
 //        
 //        updateMatrix(0, currentFloor);
 //        
@@ -268,7 +268,7 @@ void main(void)
 //        
 //        updateMatrix(4, direction);
 //        sendMatrix();
-//        updateMotor();
+        updateMotor();
     }
 }
 /**
