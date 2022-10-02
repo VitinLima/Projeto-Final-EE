@@ -180,7 +180,7 @@ void S2_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-    DIR_SetHigh();
+//    DIR_SetHigh();
     currentFloor = 2;
 //    updateMotor();
 }
@@ -190,7 +190,7 @@ void S3_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-    DIR_SetLow();
+//    DIR_SetLow();
     currentFloor = 3;
 //    updateMotor();
 }
@@ -238,7 +238,8 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    PWM3_LoadDutyValue(409);
+//    PWM3_LoadDutyValue(409);
+    PWM3_LoadDutyValue(200);
     DIR_SetHigh();
     
     uint8_t receivedData = 0;
