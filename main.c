@@ -172,9 +172,9 @@ void S1_Interrupt(){
         floorFlag = 1;
         TMR6_StartTimer();
     }
-    DIR_SetHigh();
+//    DIR_SetHigh();
     currentFloor = 1;
-//    updateMotor();
+    updateMotor();
 //    targetFloor = 4;
 //    updateMotor();
 }
@@ -206,7 +206,7 @@ void S4_Interrupt(){
     }
     DIR_SetLow();
     currentFloor = 4;
-//    updateMotor();
+    updateMotor();
 //    targetFloor = 1;
 //    updateMotor();
 }
