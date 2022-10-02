@@ -83,16 +83,16 @@ void updateMotor(){
     if(currentFloor==targetFloor){
         motorState = 0;
     } else if(currentFloor < targetFloor){
-        if(motorState == 2){
-            directionFlag = 1;
-            TMR4_StartTimer();
-        }
+//        if(motorState == 2){
+//            directionFlag = 1;
+//            TMR4_StartTimer();
+//        }
         motorState = 1;
     } else{
-        if(motorState == 1){
-            directionFlag = 1;
-            TMR4_StartTimer();
-        }
+//        if(motorState == 1){
+//            directionFlag = 1;
+//            TMR4_StartTimer();
+//        }
         motorState = 2;
     }
     controlMotor();
@@ -167,21 +167,21 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
 
 
 void S1_Interrupt(){
-    if(targetFloor == 1 && currentFloor != 1){
-        position = 0;
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
+//    if(targetFloor == 1 && currentFloor != 1){
+//        position = 0;
+//        floorFlag = 1;
+//        TMR6_StartTimer();
+//    }
     DIR_SetHigh();
     currentFloor = 1;
 //    updateMotor();
 }
 
 void S2_Interrupt(){
-    if(targetFloor == 2 && currentFloor != 2){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
+//    if(targetFloor == 2 && currentFloor != 2){
+//        floorFlag = 1;
+//        TMR6_StartTimer();
+//    }
 //    DIR_SetHigh();
     currentFloor = 2;
     updateMotor();
@@ -190,10 +190,10 @@ void S2_Interrupt(){
 }
 
 void S3_Interrupt(){
-    if(targetFloor == 3 && currentFloor != 3){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
+//    if(targetFloor == 3 && currentFloor != 3){
+//        floorFlag = 1;
+//        TMR6_StartTimer();
+//    }
 //    DIR_SetLow();
     currentFloor = 3;
     updateMotor();
@@ -202,10 +202,10 @@ void S3_Interrupt(){
 }
 
 void S4_Interrupt(){
-    if(targetFloor == 3 && currentFloor != 3){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
+//    if(targetFloor == 3 && currentFloor != 3){
+//        floorFlag = 1;
+//        TMR6_StartTimer();
+//    }
     DIR_SetLow();
     currentFloor = 4;
 //    updateMotor();
