@@ -157,7 +157,7 @@ void S1_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 1;
-    updateMotor();
+//    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -166,7 +166,7 @@ void S2_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 2;
-    updateMotor();
+//    updateMotor();
 }
 
 void S3_Interrupt(){
@@ -175,7 +175,7 @@ void S3_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 3;
-    updateMotor();
+//    updateMotor();
 }
 
 void S4_Interrupt(){
@@ -184,7 +184,7 @@ void S4_Interrupt(){
         TMR6_StartTimer();
     }
     currentFloor = 4;
-    updateMotor();
+//    updateMotor();
 }
 
 
@@ -222,6 +222,7 @@ void main(void)
     
     PWM3_LoadDutyValue(409);
     DIR_SetHigh();
+    __delay_ms(2000);
     
     uint8_t receivedData = 0;
     
