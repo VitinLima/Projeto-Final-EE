@@ -179,6 +179,7 @@ void S2_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
+    DIR_SetHigh();
     currentFloor = 2;
 //    updateMotor();
 }
@@ -188,6 +189,7 @@ void S3_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
+    DIR_SetLow();
     currentFloor = 3;
 //    updateMotor();
 }
