@@ -54,45 +54,45 @@ uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t velocity_idx = 0;
 
 void controlMotor(){
-    switch(motorState){
-        case 0:
-            PWM3_LoadDutyValue(0);
-        case 1:
-            DIR_SetHigh();
-            if(currentFloor != 4){
-                PWM3_LoadDutyValue(409);
-            } else{
+    if(!motorLoading){
+        switch(motorState){
+            case 0:
                 PWM3_LoadDutyValue(0);
-            }
-        case 2:
-            DIR_SetLow();
-            if(currentFloor != 1){
-                PWM3_LoadDutyValue(409);
-            } else{
-                PWM3_LoadDutyValue(0);
-            }
+            case 1:
+                DIR_SetHigh();
+                if(currentFloor != 4){
+                    PWM3_LoadDutyValue(409);
+                } else{
+                    PWM3_LoadDutyValue(0);
+                }
+            case 2:
+                DIR_SetLow();
+                if(currentFloor != 1){
+                    PWM3_LoadDutyValue(409);
+                } else{
+                    PWM3_LoadDutyValue(0);
+                }
+        }
+    } else{
+        PWM3_LoadDutyValue(0);
     }
 }
 
 void updateMotor(){
-    if(!motorLoading){
-        if(currentFloor==targetFloor){
-            motorState = 0;
-        } else if(currentFloor < targetFloor){
-            if(motorState == 2){
-                motorLoading = 1;
-                TMR4_StartTimer();
-            }
-            motorState = 1;
-        } else{
-            if(motorState == 1){
-                motorLoading = 1;
-                TMR4_StartTimer();
-            }
-            motorState = 2;
-        }
-    } else{
+    if(currentFloor==targetFloor){
         motorState = 0;
+    } else if(currentFloor < targetFloor){
+        if(motorState == 2){
+            motorLoading = 1;
+            TMR4_StartTimer();
+        }
+        motorState = 1;
+    } else{
+        if(motorState == 1){
+            motorLoading = 1;
+            TMR4_StartTimer();
+        }
+        motorState = 2;
     }
     controlMotor();
 }
@@ -122,7 +122,7 @@ void TMR0_Interrupt(){
     
     data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
     data_tx[1] = (p>>1) & 0x7F;
-    data_tx[2] = (v<<2) & 0x7F;
+    data_tx[2] = (velocity[velocity_idx]<<2) & 0x7F;
     data_tx[3] = t & 0x7F;
     
     if(EUSART_is_tx_ready()){
@@ -151,10 +151,10 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
         position--;
     }
     if(TMR1_HasOverflowOccured()){
-        velocity[velocity_idx++] = 65535;
+        velocity[++velocity_idx] = 0;
         PIR1bits.TMR1IF = 0;
     } else{
-        velocity[velocity_idx++] = capturedValue;//(uint16_t)(2075e2/(uint32_t)capturedValue);
+        velocity[++velocity_idx] = capturedValue;//(uint16_t)(2075e2/(uint32_t)capturedValue);
     }
     if(velocity_idx>15){
         velocity_idx = 0;
@@ -169,9 +169,9 @@ void S1_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-    DIR_SetHigh();
+//    DIR_SetHigh();
     currentFloor = 1;
-//    updateMotor();
+    updateMotor();
 }
 
 void S2_Interrupt(){
@@ -181,7 +181,8 @@ void S2_Interrupt(){
     }
 //    DIR_SetHigh();
     currentFloor = 2;
-//    updateMotor();
+    updateMotor();
+    targetFloor = 4;
 }
 
 void S3_Interrupt(){
@@ -191,7 +192,7 @@ void S3_Interrupt(){
     }
 //    DIR_SetLow();
     currentFloor = 3;
-//    updateMotor();
+    updateMotor();
 }
 
 void S4_Interrupt(){
@@ -199,9 +200,10 @@ void S4_Interrupt(){
         motorLoading = 1;
         TMR6_StartTimer();
     }
-    DIR_SetLow();
+//    DIR_SetLow();
     currentFloor = 4;
-//    updateMotor();
+    updateMotor();
+    targetFloor = 1;
 }
 
 
@@ -237,8 +239,8 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    PWM3_LoadDutyValue(409);
-    DIR_SetHigh();
+//    PWM3_LoadDutyValue(409);
+//    DIR_SetHigh();
     
     uint8_t receivedData = 0;
     
