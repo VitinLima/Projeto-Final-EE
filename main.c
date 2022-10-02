@@ -205,6 +205,7 @@ void S4_Interrupt(){
     currentFloor = 4;
     updateMotor();
     targetFloor = 1;
+    updateMotor();
 }
 
 
@@ -253,6 +254,7 @@ void main(void)
                 receivedData = EUSART_Read();
             }
             targetFloor = receivedData+1;
+            updateMotor();
         }
 //        
 //        updateMatrix(0, currentFloor);
@@ -268,7 +270,6 @@ void main(void)
 //        
 //        updateMatrix(4, direction);
 //        sendMatrix();
-        updateMotor();
     }
 }
 /**
