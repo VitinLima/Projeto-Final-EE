@@ -112,13 +112,13 @@ void TMR0_Interrupt(){
     for(int i = 0; i < 16; i++){
         v += period[i];
     }
-    v >>= 4;
+    v = v>>4;
     v = 2075e2/v;
     
     // LM35 2 - 150 ºC, 10 mV/Cº
     // ADC 10 bits, 0 - 2048 mV
     uint32_t t = ADC_GetConversion(channel_AN2);
-    t <<= 12;
+    t = t<<12;
     t /= 10230;
     
     data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
