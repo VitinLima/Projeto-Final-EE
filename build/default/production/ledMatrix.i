@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "ledMatrix.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 44 "main.c"
+# 1 "ledMatrix.c" 2
+
 # 1 "./mcc_generated_files/mcc.h" 1
 # 49 "./mcc_generated_files/mcc.h"
 # 1 "D:/ProgramData/Microchip/MPLABX/v6.00/packs/Microchip/PIC12-16F1xxx_DFP/1.3.90/xc8\\pic\\include\\xc.h" 1 3
@@ -4795,7 +4795,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 109 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 44 "main.c" 2
+# 2 "ledMatrix.c" 2
 
 # 1 "./ledMatrix.h" 1
 # 13 "./ledMatrix.h"
@@ -4823,240 +4823,74 @@ void setMatrix(uint8_t pos, uint8_t val);
 
 
 void sendMatrix();
-# 45 "main.c" 2
+# 3 "ledMatrix.c" 2
 
 
-uint8_t currentFloor = 4;
-uint8_t targetFloor = 1;
-uint8_t floorFlag = 0;
-uint8_t directionFlag = 0;
-uint8_t motorState = 0;
-uint8_t position = 128;
-uint8_t data_tx[4];
-uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-uint8_t velocity_idx = 0;
 
-void sendMotor(){
-    if(floorFlag || directionFlag){
-        PWM3_LoadDutyValue(0);
-    } else{
-        switch(motorState){
-            case 0:
-                PWM3_LoadDutyValue(0);
-                break;
-            case 1:
-                do { LATAbits.LATA7 = 1; } while(0);
-                if(currentFloor == 4){
-                    PWM3_LoadDutyValue(0);
-                } else{
-                    PWM3_LoadDutyValue(409);
-                }
-                break;
-            case 2:
-                do { LATAbits.LATA7 = 0; } while(0);
-                if(currentFloor == 1){
-                    PWM3_LoadDutyValue(0);
-                } else{
-                    PWM3_LoadDutyValue(409);
-                }
-                break;
-        }
+
+
+
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b11111111" "," "0b10000001" "," "0b10000001" "," "0b11111111" "," "0b00000000" "," "0b00000000" "," "0b00000000" "," "0b11111111");
+# 18 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b11000010" "," "0b10100001" "," "0b10010001" "," "0b10001110" "," "0b01000010" "," "0b10001001" "," "0b10001001" "," "0b01110110");
+# 28 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b00011111" "," "0b00010000" "," "0b00010000" "," "0b11111111" "," "0b10001111" "," "0b10001001" "," "0b10001001" "," "0b01110001");
+# 37 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b01111110" "," "0b10001001" "," "0b10001001" "," "0b01110010" "," "0b00001001" "," "0b00001001" "," "0b00001001" "," "0b11111111");
+# 46 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b01110110" "," "0b10001001" "," "0b10001001" "," "0b01110110" "," "0b01001110" "," "0b10010001" "," "0b10010001" "," "0b01111110");
+# 55 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b00000000" "," "0b00011000" "," "0b00000110" "," "0b00011000" "," "0b00000000" "," "0b00011000" "," "0b01100000" "," "0b00011000");
+# 64 "ledMatrix.c"
+__asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); __asm("\tdb\t" "0b00000000" "," "0b00000000" "," "0b00000000" "," "0b00000000" "," "0b00000000" "," "0b00011000" "," "0b01100110" "," "0b00011000");
+# 74 "ledMatrix.c"
+void txMAX7219(uint8_t addr0, uint8_t dat0){
+    do { LATBbits.LATB1 = 0; } while(0);
+    SPI1_WriteByte(addr0);
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+    SPI1_WriteByte(dat0);
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+    do { LATBbits.LATB1 = 1; } while(0);
+}
+
+void initMAX7219(){
+
+    txMAX7219(0x09,0x00);
+
+    txMAX7219(0x0A,0x00);
+
+    txMAX7219(0x0C,0x00);
+
+    txMAX7219(0x0B,0x07);
+
+    txMAX7219(0x0C,0x01);
+
+    txMAX7219(0x0F,0x01);
+
+
+
+
+
+}
+
+void setMatrix(uint8_t pos, uint8_t val){
+
+
+
+ uint8_t eeAdd = val<<2;
+ for(uint8_t i=0;i<4;i++){
+  matrix[pos++]=DATAEE_ReadByte(eeAdd++);
     }
 }
 
-void updateMotor(){
-    if(currentFloor==targetFloor){
-        motorState = 0;
-    } else if(currentFloor < targetFloor){
-        if(motorState == 2){
-            directionFlag = 1;
-            TMR4_StartTimer();
-        }
-        motorState = 1;
-    } else{
-        if(motorState == 1){
-            directionFlag = 1;
-            TMR4_StartTimer();
-        }
-        motorState = 2;
-    }
-    sendMotor();
-}
+void sendMatrix(){
+    for(uint8_t i=0;i<8;i++){
 
-void updateMatrix(){
-    setMatrix(0, currentFloor);
-
-    uint8_t direction = 0;
-    if(motorState==0){
-        direction = 12;
-    } else if(motorState==1){
-        direction = 10;
-    } else{
-        direction = 11;
-    }
-
-    setMatrix(4, direction);
-    sendMatrix();
-}
-
-void TMR0_Interrupt(){
-
-
-    uint16_t p = position;
-    p *= 180;
-    p /= 215;
+        txMAX7219(i+1,matrix[7-i]);
 
 
 
-    uint32_t v = 0;
-    for(int i = 0; i < 16; i++){
-        v += velocity[i];
-    }
-    v = v>>4;
-
-
-
-    uint32_t t = ADC_GetConversion(channel_AN2);
-    t = t<<12;
-    t /= 10230;
-
-    data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
-    data_tx[1] = (p>>1) & 0x7F;
-    data_tx[2] = (v<<2) & 0x7F;
-    data_tx[3] = t<<1 & 0x7F;
-
-    if(EUSART_is_tx_ready()){
-        for(int i = 0; i<4; i++){
-            EUSART_Write(data_tx[i]);
-        }
-    }
-}
-
-void TMR4_Interrupt(){
-    TMR4_StopTimer();
-    TMR4_WriteTimer(0);
-    directionFlag = 0;
-    updateMotor();
-    updateMatrix();
-}
-
-void TMR6_Interrupt(){
-    TMR6_StopTimer();
-    TMR6_WriteTimer(0);
-    floorFlag = 0;
-    updateMotor();
-    updateMatrix();
-}
-
-void CCP4_Interrupt(uint16_t capturedValue){
-    if(PORTAbits.RA7){
-        position++;
-    } else{
-        position--;
-    }
-    if(TMR1_HasOverflowOccured()){
-        velocity[++velocity_idx] = 0;
-        PIR1bits.TMR1IF = 0;
-    } else{
-        velocity[++velocity_idx] = capturedValue;
-    }
-    if(velocity_idx>15){
-        velocity_idx = 0;
-    }
-}
-
-
-
-void S1_Interrupt(){
-    position = 0;
-    if(targetFloor == 1 && currentFloor != 1){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
-    currentFloor = 1;
-    updateMotor();
-    updateMatrix();
-}
-
-void S2_Interrupt(){
-    if(targetFloor == 2 && currentFloor != 2){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
-    currentFloor = 2;
-    updateMotor();
-    updateMatrix();
-}
-
-void S3_Interrupt(){
-    if(targetFloor == 3 && currentFloor != 3){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
-    currentFloor = 3;
-    updateMotor();
-    updateMatrix();
-}
-
-void S4_Interrupt(){
-    if(targetFloor == 4 && currentFloor != 4){
-        floorFlag = 1;
-        TMR6_StartTimer();
-    }
-    currentFloor = 4;
-    updateMotor();
-    updateMatrix();
-}
-
-
-
-
-
-void main(void)
-{
-
-    SYSTEM_Initialize();
-
-    TMR0_SetInterruptHandler(TMR0_Interrupt);
-    TMR4_SetInterruptHandler(TMR4_Interrupt);
-    TMR6_SetInterruptHandler(TMR6_Interrupt);
-    CCP4_SetCallBack(CCP4_Interrupt);
-    IOCBF0_SetInterruptHandler(S1_Interrupt);
-    IOCBF3_SetInterruptHandler(S2_Interrupt);
-    CMP1_SetInterruptHandler(S3_Interrupt);
-    CMP2_SetInterruptHandler(S4_Interrupt);
-
-
-
-
-
-    (INTCONbits.GIE = 1);
-
-
-    (INTCONbits.PEIE = 1);
-
-
-
-
-
-
-
-    PWM3_LoadDutyValue(409);
-    do { LATAbits.LATA7 = 1; } while(0);
-
-    uint8_t receivedData = 0;
-
-    while (1)
-    {
-        if(EUSART_is_rx_ready()){
-            while(EUSART_is_rx_ready()){
-                receivedData = EUSART_Read();
-            }
-            targetFloor = receivedData+1;
-            if(motorState==0){
-                updateMotor();
-                updateMatrix();
-            }
-        }
     }
 }

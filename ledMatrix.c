@@ -102,7 +102,7 @@ void initMAX7219(){
 //    txMAX7219(0x0C,0x01);
 }
 
-void updateMatrix(uint8_t pos, uint8_t val){
+void setMatrix(uint8_t pos, uint8_t val){
 	// Leitura do valor (a eeprom guarda 8 bits por localização)
 	// e se precisa de 4 localizações para um valor na matriz de LEDs.
 	// Se multiplica o valor (val) por 4 (deslocar para a direita 2 vezes) e com isso temos a localização na EEPROM 	
