@@ -54,27 +54,27 @@ uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t velocity_idx = 0;
 
 void controlMotor(){
-    if(!motorLoading){
+    if(motorLoading){
+        PWM3_LoadDutyValue(0);
+    } else{
         switch(motorState){
             case 0:
                 PWM3_LoadDutyValue(0);
             case 1:
                 DIR_SetHigh();
-                if(currentFloor != 4){
-                    PWM3_LoadDutyValue(409);
-                } else{
+                if(currentFloor == 4){
                     PWM3_LoadDutyValue(0);
+                } else{
+                    PWM3_LoadDutyValue(409);
                 }
             case 2:
                 DIR_SetLow();
-                if(currentFloor != 1){
-                    PWM3_LoadDutyValue(409);
-                } else{
+                if(currentFloor == 1){
                     PWM3_LoadDutyValue(0);
+                } else{
+                    PWM3_LoadDutyValue(409);
                 }
         }
-    } else{
-        PWM3_LoadDutyValue(0);
     }
 }
 
@@ -183,7 +183,7 @@ void S2_Interrupt(){
     }
 //    DIR_SetHigh();
     currentFloor = 2;
-//    updateMotor();
+    updateMotor();
 }
 
 void S3_Interrupt(){
@@ -193,7 +193,7 @@ void S3_Interrupt(){
     }
 //    DIR_SetLow();
     currentFloor = 3;
-//    updateMotor();
+    updateMotor();
 }
 
 void S4_Interrupt(){
