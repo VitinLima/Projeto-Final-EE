@@ -123,7 +123,7 @@ void TMR0_Interrupt(){
     
     data_tx[0] = (0x80 | ((motorState<<4) | (currentFloor-1))) & 0xB3;
     data_tx[1] = (p>>1) & 0x7F;
-    data_tx[2] = (velocity[velocity_idx]<<2) & 0x7F;
+    data_tx[2] = (motorState<<2) & 0x7F;
     data_tx[3] = t & 0x7F;
     
     if(EUSART_is_tx_ready()){
@@ -168,10 +168,10 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
 
 void S1_Interrupt(){
 //    if(targetFloor == 1 && currentFloor != 1){
-//        position = 0;
 //        floorFlag = 1;
 //        TMR6_StartTimer();
 //    }
+    position = 0;
     DIR_SetHigh();
     currentFloor = 1;
 //    updateMotor();
