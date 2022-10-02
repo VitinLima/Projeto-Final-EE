@@ -55,7 +55,7 @@ uint8_t velocity[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 uint8_t velocity_idx = 0;
 
 void controlMotor(){
-    if(floorFlag || directionFlag){
+    if(false){//floorFlag || directionFlag){
         PWM3_LoadDutyValue(0);
     } else{
         switch(motorState){
