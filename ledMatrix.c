@@ -83,21 +83,25 @@ void txMAX7219(uint8_t addr0, uint8_t dat0){
 }
 
 void initMAX7219(){
-    // Decode mode = 0
-    txMAX7219(0x09,0x00);
-    // Intensity 17/32
-    txMAX7219(0x0A,0x00);
-    // Shutdown mode = 0
-    txMAX7219(0x0C,0x00);
-    // Scan Limit
-    txMAX7219(0x0B,0x07);
-    // Shutdown mode = 1
-    txMAX7219(0x0C,0x01);
-    // Display-Test = 1
-    txMAX7219(0x0F,0x01);
+    txMAX7219(0x0F,0x01); // Display-Test = 1
     __delay_ms(1000);
-    // Display-Test = 0
-    txMAX7219(0x0F,0x00);
+    txMAX7219(0x0F,0x00); // Display-Test = 0
+    
+//    // Decode mode = 0
+//    txMAX7219(0x09,0x00);
+//    // Intensity 17/32
+//    txMAX7219(0x0A,0x00);
+//    // Shutdown mode = 0
+//    txMAX7219(0x0C,0x00);
+//    // Scan Limit
+//    txMAX7219(0x0B,0x07);
+//    // Shutdown mode = 1
+//    txMAX7219(0x0C,0x01);
+//    // Display-Test = 1
+//    txMAX7219(0x0F,0x01);
+//    __delay_ms(1000);
+//    // Display-Test = 0
+//    txMAX7219(0x0F,0x00);
 //    // Shutdown mode = 1
 //    txMAX7219(0x0C,0x01);
 }
