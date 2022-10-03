@@ -91,7 +91,7 @@ void initMAX7219(){
     txMAX7219(0x0F,0x01); // Display-Test = 1
     __delay_ms(1000);
     txMAX7219(0x0F,0x00); // Display-Test = 0
-    txMAX7219(0x0C,0x00); // Shutdown mode = 0
+    txMAX7219(0x0C,0x01); // Shutdown mode = 1
 }
 
 void setMatrix(uint8_t pos, uint8_t val){
