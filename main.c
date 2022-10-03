@@ -85,6 +85,7 @@ void sendMotor(){
 void updateMotor(){
     if(currentFloor==targetFloor){
         motorState = 0;
+        targetFloor = 1;
     } else if(currentFloor < targetFloor){
         if(motorState == 2){
             directionFlag = 1;
@@ -114,7 +115,7 @@ void updateMatrix(){
     }
 
     setMatrix(4, direction);
-//    sendMatrix();
+    sendMatrix();
 }
 
 void TMR0_Interrupt(){
@@ -187,7 +188,7 @@ void CCP4_Interrupt(uint16_t capturedValue){ // Encoder
 
 void S1_Interrupt(){
     position = 0;
-    if(targetFloor == 1 && currentFloor != 1){
+    if(targetFloor == 1){
         floorFlag = 1;
         TMR6_StartTimer();
     }
@@ -197,7 +198,7 @@ void S1_Interrupt(){
 }
 
 void S2_Interrupt(){
-    if(targetFloor == 2 && currentFloor != 2){
+    if(targetFloor == 2){
         floorFlag = 1;
         TMR6_StartTimer();
     }
@@ -207,7 +208,7 @@ void S2_Interrupt(){
 }
 
 void S3_Interrupt(){
-    if(targetFloor == 3 && currentFloor != 3){
+    if(targetFloor == 3){
         floorFlag = 1;
         TMR6_StartTimer();
     }
@@ -217,7 +218,7 @@ void S3_Interrupt(){
 }
 
 void S4_Interrupt(){
-    if(targetFloor == 4 && currentFloor != 4){
+    if(targetFloor == 4){
         floorFlag = 1;
         TMR6_StartTimer();
     }
