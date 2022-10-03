@@ -148,8 +148,8 @@ void TMR0_Interrupt(){
             EUSART_Write(data_tx[i]);
         }
     }
-    txMAX7219(0x0F,0x01); // Display-Test = 1
-    txMAX7219(0x0F,0x00); // Display-Test = 0
+//    txMAX7219(0x0F,0x01); // Display-Test = 1
+//    txMAX7219(0x0F,0x00); // Display-Test = 0
 }
 
 void TMR4_Interrupt(){ // Espera de 500 ms para mudança de direção
@@ -265,7 +265,7 @@ void main(void)
     PWM3_LoadDutyValue(409);
     __delay_ms(2000);
     updateMotor();
-//    initMAX7219();
+    initMAX7219();
     
     uint8_t receivedData = 0;
     
