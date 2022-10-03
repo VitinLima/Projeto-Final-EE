@@ -259,8 +259,8 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    PWM3_LoadDutyValue(409);
-    DIR_SetHigh();
+    initMAX7219();
+    updateMotor();
     
     uint8_t receivedData = 0;
     
