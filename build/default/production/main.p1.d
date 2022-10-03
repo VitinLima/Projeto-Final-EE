@@ -8,6 +8,7 @@ mcc_generated_files/spi1.h  \
 mcc_generated_files/cmp2.h  \
 mcc_generated_files/cmp1.h  \
 mcc_generated_files/ccp4.h  \
+mcc_generated_files/fvr.h  \
 mcc_generated_files/dac.h  \
 mcc_generated_files/tmr6.h  \
 mcc_generated_files/tmr4.h  \

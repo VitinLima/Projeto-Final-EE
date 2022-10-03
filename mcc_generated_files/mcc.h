@@ -57,6 +57,7 @@
 #include "cmp2.h"
 #include "cmp1.h"
 #include "ccp4.h"
+#include "fvr.h"
 #include "dac.h"
 #include "tmr6.h"
 #include "tmr4.h"

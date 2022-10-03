@@ -72,14 +72,14 @@ __EEPROM_DATA(
         0b00011000);      
 
 void txMAX7219(uint8_t addr0, uint8_t dat0){
-    RB1_SetLow(); // CS_SetLow();
+    CS_SetLow();
     SPI1_WriteByte(addr0);
     while(!PIR1bits.SSP1IF);
     PIR1bits.SSP1IF = 0;
     SPI1_WriteByte(dat0);
     while(!PIR1bits.SSP1IF);
     PIR1bits.SSP1IF = 0;
-    RB1_SetHigh();// CS_SetHigh();
+    CS_SetHigh();
 }
 
 void initMAX7219(){
@@ -95,11 +95,11 @@ void initMAX7219(){
     txMAX7219(0x0C,0x01);
     // Display-Test = 1
     txMAX7219(0x0F,0x01);
-//    __delay_ms(1000);
-//    // Display-Test = 0
-//    txMAX7219(0x0F,0x00);
-//    // Shutdown mode = 1
-//    txMAX7219(0x0C,0x01);
+    __delay_ms(1000);
+    // Display-Test = 0
+    txMAX7219(0x0F,0x00);
+    // Shutdown mode = 1
+    txMAX7219(0x0C,0x01);
 }
 
 void setMatrix(uint8_t pos, uint8_t val){

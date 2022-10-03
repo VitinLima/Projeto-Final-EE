@@ -61,13 +61,13 @@ void PIN_MANAGER_Initialize(void)
     LATx registers
     */
     LATA = 0x00;
-    LATB = 0x00;
+    LATB = 0x02;
 
     /**
     TRISx registers
     */
     TRISA = 0x37;
-    TRISB = 0xEF;
+    TRISB = 0xED;
 
     /**
     ANSELx registers

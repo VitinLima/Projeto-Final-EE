@@ -15,7 +15,7 @@ channel_DAC 30
 channel_FVR 31
 ]
 "137 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
-[e E2966 . `uc
+[e E2969 . `uc
 channel_AN2 2
 channel_Temp 29
 channel_DAC 30
@@ -38,6 +38,8 @@ channel_FVR 31
 "74 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
 [v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
 [v i1_txMAX7219 txMAX7219 `(v  1 e 1 0 ]
+"85
+[v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
 "105
 [v _setMatrix setMatrix `(v  1 e 1 0 ]
 [v i1_setMatrix setMatrix `(v  1 e 1 0 ]
@@ -119,13 +121,15 @@ channel_FVR 31
 [v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
 "165
 [v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
 "52 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 "50 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"71
+"72
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"81
+"82
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/memory.c
 [v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
@@ -168,9 +172,11 @@ channel_FVR 31
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "108
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"125
+"130
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+"140
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-"129
+"144
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 "63 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
@@ -232,7 +238,7 @@ channel_FVR 31
 ]
 [u S361 . 1 `S347 1 . 1 0 `S356 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES361  1 e 1 @11 ]
-[s S1569 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1579 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -242,8 +248,8 @@ channel_FVR 31
 `uc 1 RA7 1 0 :1:7 
 ]
 "447
-[u S1578 . 1 `S1569 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1578  1 e 1 @12 ]
+[u S1588 . 1 `S1579 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1588  1 e 1 @12 ]
 [s S81 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -285,7 +291,7 @@ channel_FVR 31
 [v _TMR1H TMR1H `VEuc  1 e 1 @23 ]
 "800
 [v _T1CON T1CON `VEuc  1 e 1 @24 ]
-[s S944 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S948 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -295,15 +301,15 @@ channel_FVR 31
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "822
-[s S953 . 1 `uc 1 . 1 0 :4:0 
+[s S957 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S957 . 1 `S944 1 . 1 0 `S953 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES957  1 e 1 @24 ]
+[u S961 . 1 `S948 1 . 1 0 `S957 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES961  1 e 1 @24 ]
 "872
 [v _T1GCON T1GCON `VEuc  1 e 1 @25 ]
-[s S974 . 1 `uc 1 T1GSS0 1 0 :1:0 
+[s S978 . 1 `uc 1 T1GSS0 1 0 :1:0 
 `uc 1 T1GSS1 1 0 :1:1 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO 1 0 :1:3 
@@ -313,17 +319,17 @@ channel_FVR 31
 `uc 1 TMR1GE 1 0 :1:7 
 ]
 "892
-[s S983 . 1 `uc 1 T1GSS 1 0 :2:0 
+[s S987 . 1 `uc 1 T1GSS 1 0 :2:0 
 ]
-[u S985 . 1 `S974 1 . 1 0 `S983 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES985  1 e 1 @25 ]
+[u S989 . 1 `S978 1 . 1 0 `S987 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES989  1 e 1 @25 ]
 "942
 [v _TMR2 TMR2 `VEuc  1 e 1 @26 ]
 "962
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "982
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
-[s S882 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S886 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -332,12 +338,12 @@ channel_FVR 31
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
 "1003
-[s S890 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[s S894 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS 1 0 :4:3 
 ]
-[u S894 . 1 `S882 1 . 1 0 `S890 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES894  1 e 1 @28 ]
+[u S898 . 1 `S886 1 . 1 0 `S894 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES898  1 e 1 @28 ]
 "1153
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1215
@@ -406,7 +412,7 @@ channel_FVR 31
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "1888
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S1088 . 1 `uc 1 ADON 1 0 :1:0 
+[s S1098 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -415,20 +421,20 @@ channel_FVR 31
 `uc 1 CHS4 1 0 :1:6 
 ]
 "1913
-[s S1096 . 1 `uc 1 . 1 0 :1:0 
+[s S1106 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S1100 . 1 `uc 1 . 1 0 :1:0 
+[s S1110 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S1103 . 1 `S1088 1 . 1 0 `S1096 1 . 1 0 `S1100 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES1103  1 e 1 @157 ]
+[u S1113 . 1 `S1098 1 . 1 0 `S1106 1 . 1 0 `S1110 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES1113  1 e 1 @157 ]
 "1968
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "2040
 [v _LATA LATA `VEuc  1 e 1 @268 ]
-[s S1525 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1535 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -438,11 +444,11 @@ channel_FVR 31
 `uc 1 LATA7 1 0 :1:7 
 ]
 "2057
-[u S1534 . 1 `S1525 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1534  1 e 1 @268 ]
+[u S1544 . 1 `S1535 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1544  1 e 1 @268 ]
 "2097
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1717 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1731 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -452,8 +458,8 @@ channel_FVR 31
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2114
-[u S1726 . 1 `S1717 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1726  1 e 1 @269 ]
+[u S1740 . 1 `S1731 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1740  1 e 1 @269 ]
 "2159
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
 "2216
@@ -462,14 +468,31 @@ channel_FVR 31
 [v _CM2CON0 CM2CON0 `VEuc  1 e 1 @275 ]
 "2339
 [v _CM2CON1 CM2CON1 `VEuc  1 e 1 @276 ]
-[s S1270 . 1 `uc 1 MC1OUT 1 0 :1:0 
+[s S1280 . 1 `uc 1 MC1OUT 1 0 :1:0 
 `uc 1 MC2OUT 1 0 :1:1 
 ]
 "2416
-[u S1273 . 1 `S1270 1 . 1 0 ]
-[v _CMOUTbits CMOUTbits `VES1273  1 e 1 @277 ]
+[u S1283 . 1 `S1280 1 . 1 0 ]
+[v _CMOUTbits CMOUTbits `VES1283  1 e 1 @277 ]
 "2431
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
+"2458
+[v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
+[s S1792 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+"2479
+[s S1801 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+]
+[u S1804 . 1 `S1792 1 . 1 0 `S1801 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES1804  1 e 1 @279 ]
 "2534
 [v _DACCON0 DACCON0 `VEuc  1 e 1 @280 ]
 "2595
@@ -490,7 +513,7 @@ channel_FVR 31
 [v _EEDATL EEDATL `VEuc  1 e 1 @403 ]
 "3071
 [v _EEDATH EEDATH `VEuc  1 e 1 @404 ]
-[s S1169 . 1 `uc 1 RD 1 0 :1:0 
+[s S1179 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -500,8 +523,8 @@ channel_FVR 31
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "3108
-[u S1178 . 1 `S1169 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES1178  1 e 1 @405 ]
+[u S1188 . 1 `S1179 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES1188  1 e 1 @405 ]
 "3153
 [v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
 "3173
@@ -647,7 +670,7 @@ channel_FVR 31
 [v _PR4 PR4 `VEuc  1 e 1 @1046 ]
 "6353
 [v _T4CON T4CON `VEuc  1 e 1 @1047 ]
-[s S1424 . 1 `uc 1 T4CKPS0 1 0 :1:0 
+[s S1434 . 1 `uc 1 T4CKPS0 1 0 :1:0 
 `uc 1 T4CKPS1 1 0 :1:1 
 `uc 1 TMR4ON 1 0 :1:2 
 `uc 1 T4OUTPS0 1 0 :1:3 
@@ -656,19 +679,19 @@ channel_FVR 31
 `uc 1 T4OUTPS3 1 0 :1:6 
 ]
 "6374
-[s S1432 . 1 `uc 1 T4CKPS 1 0 :2:0 
+[s S1442 . 1 `uc 1 T4CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T4OUTPS 1 0 :4:3 
 ]
-[u S1436 . 1 `S1424 1 . 1 0 `S1432 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1436  1 e 1 @1047 ]
+[u S1446 . 1 `S1434 1 . 1 0 `S1442 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1446  1 e 1 @1047 ]
 "6424
 [v _TMR6 TMR6 `VEuc  1 e 1 @1052 ]
 "6444
 [v _PR6 PR6 `VEuc  1 e 1 @1053 ]
 "6464
 [v _T6CON T6CON `VEuc  1 e 1 @1054 ]
-[s S1331 . 1 `uc 1 T6CKPS0 1 0 :1:0 
+[s S1341 . 1 `uc 1 T6CKPS0 1 0 :1:0 
 `uc 1 T6CKPS1 1 0 :1:1 
 `uc 1 TMR6ON 1 0 :1:2 
 `uc 1 T6OUTPS0 1 0 :1:3 
@@ -677,12 +700,12 @@ channel_FVR 31
 `uc 1 T6OUTPS3 1 0 :1:6 
 ]
 "6485
-[s S1339 . 1 `uc 1 T6CKPS 1 0 :2:0 
+[s S1349 . 1 `uc 1 T6CKPS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 T6OUTPS 1 0 :4:3 
 ]
-[u S1343 . 1 `S1331 1 . 1 0 `S1339 1 . 1 0 ]
-[v _T6CONbits T6CONbits `VES1343  1 e 1 @1054 ]
+[u S1353 . 1 `S1341 1 . 1 0 `S1349 1 . 1 0 ]
+[v _T6CONbits T6CONbits `VES1353  1 e 1 @1054 ]
 "47 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
 [v _currentFloor currentFloor `uc  1 e 1 0 ]
 "48
@@ -804,6 +827,11 @@ channel_FVR 31
 [v sendMatrix@i i `uc  1 a 1 4 ]
 "123
 } 0
+"85
+[v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
+{
+"103
+} 0
 "74
 [v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
 {
@@ -825,12 +853,12 @@ channel_FVR 31
 "50 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"69
+"70
 } 0
-"81
+"82
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 {
-"85
+"86
 } 0
 "64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
 [v _TMR6_Initialize TMR6_Initialize `(v  1 e 1 0 ]
@@ -869,11 +897,11 @@ channel_FVR 31
 {
 "85
 } 0
-"125
+"140
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
-"127
+"142
 } 0
 "62 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
@@ -902,10 +930,15 @@ channel_FVR 31
 [v IOCBF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "153
 } 0
-"71 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
+"72 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"79
+"80
+} 0
+"58 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+{
+"62
 } 0
 "66 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/eusart.c
 [v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
@@ -1063,18 +1096,25 @@ channel_FVR 31
 "108 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
-"122
+"110
+[v TMR0_ISR@CountCallBack CountCallBack `VEus  1 s 2 CountCallBack ]
+"128
 } 0
-"129
+"130
+[v _TMR0_CallBack TMR0_CallBack `(v  1 e 1 0 ]
+{
+"138
+} 0
+"144
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"132
+"147
 } 0
 "120 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
 [v _TMR0_Interrupt TMR0_Interrupt `(v  1 e 1 0 ]
 {
 "147
-[v TMR0_Interrupt@i_1680 i `i  1 a 2 10 ]
+[v TMR0_Interrupt@i_1694 i `i  1 a 2 10 ]
 "130
 [v TMR0_Interrupt@i i `i  1 a 2 8 ]
 "137

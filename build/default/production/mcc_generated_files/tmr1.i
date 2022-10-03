@@ -4385,7 +4385,7 @@ void TMR1_Initialize(void)
     timer1ReloadVal=(uint16_t)((TMR1H << 8) | TMR1L);
 
 
-    T1CON = 0x05;
+    T1CON = 0x35;
 }
 
 void TMR1_StartTimer(void)

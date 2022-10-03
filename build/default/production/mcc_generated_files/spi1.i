@@ -4511,14 +4511,14 @@ typedef struct {
 
 
 static const spi1_configuration_t spi1_configuration[] = {
-    { 0x0, 0x0, 0x1, 0 }
+    { 0x11, 0x0, 0x1, 0 }
 };
 
 void SPI1_Initialize(void)
 {
 
     SSP1STAT = 0x00;
-    SSP1CON1 = 0x00;
+    SSP1CON1 = 0x11;
     SSP1ADD = 0x01;
     TRISBbits.TRISB4 = 0;
     SSP1CON1bits.SSPEN = 0;

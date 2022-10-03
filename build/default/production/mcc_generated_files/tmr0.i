@@ -4335,21 +4335,23 @@ extern __bank0 __bit __timeout;
 # 55 "mcc_generated_files/tmr0.h"
 # 1 "D:\\ProgramData\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdbool.h" 1 3
 # 55 "mcc_generated_files/tmr0.h" 2
-# 98 "mcc_generated_files/tmr0.h"
+# 104 "mcc_generated_files/tmr0.h"
 void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
+# 135 "mcc_generated_files/tmr0.h"
 uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/tmr0.h"
+# 174 "mcc_generated_files/tmr0.h"
 void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/tmr0.h"
+# 210 "mcc_generated_files/tmr0.h"
 void TMR0_Reload(void);
-# 219 "mcc_generated_files/tmr0.h"
+# 225 "mcc_generated_files/tmr0.h"
 void TMR0_ISR(void);
-# 238 "mcc_generated_files/tmr0.h"
+# 243 "mcc_generated_files/tmr0.h"
+void TMR0_CallBack(void);
+# 261 "mcc_generated_files/tmr0.h"
  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "mcc_generated_files/tmr0.h"
+# 279 "mcc_generated_files/tmr0.h"
 extern void (*TMR0_InterruptHandler)(void);
-# 274 "mcc_generated_files/tmr0.h"
+# 297 "mcc_generated_files/tmr0.h"
 void TMR0_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/tmr0.c" 2
 
@@ -4369,13 +4371,13 @@ void TMR0_Initialize(void)
 
 
 
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD7 & 0x3F));
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD1 & 0x3F));
 
 
-    TMR0 = 0xD9;
+    TMR0 = 0x06;
 
 
-    timer0ReloadVal= 217;
+    timer0ReloadVal= 6;
 
 
     INTCONbits.TMR0IF = 0;
@@ -4410,20 +4412,35 @@ void TMR0_Reload(void)
 
 void TMR0_ISR(void)
 {
+    static volatile uint16_t CountCallBack = 0;
 
 
     INTCONbits.TMR0IF = 0;
 
     TMR0 = timer0ReloadVal;
 
-    if(TMR0_InterruptHandler)
+
+    if (++CountCallBack >= 200)
     {
-        TMR0_InterruptHandler();
+
+        TMR0_CallBack();
+
+
+        CountCallBack = 0;
     }
 
 
 }
 
+void TMR0_CallBack(void)
+{
+
+
+    if(TMR0_InterruptHandler)
+    {
+        TMR0_InterruptHandler();
+    }
+}
 
 void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
     TMR0_InterruptHandler = InterruptHandler;
