@@ -624,14 +624,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 63:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
 "64
-[; ;mcc_generated_files/pin_manager.c: 64:     LATB = 0x02;
-[e = _LATB -> -> 2 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 64:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
 "69
 [; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0x37;
 [e = _TRISA -> -> 55 `i `uc ]
 "70
-[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xED;
-[e = _TRISB -> -> 237 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xEF;
+[e = _TRISB -> -> 239 `i `uc ]
 "75
 [; ;mcc_generated_files/pin_manager.c: 75:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]

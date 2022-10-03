@@ -4368,13 +4368,13 @@ void PIN_MANAGER_Initialize(void)
 
 
     LATA = 0x00;
-    LATB = 0x02;
+    LATB = 0x00;
 
 
 
 
     TRISA = 0x37;
-    TRISB = 0xED;
+    TRISB = 0xEF;
 
 
 

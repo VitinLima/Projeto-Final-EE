@@ -4561,6 +4561,13 @@ void CMP1_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*CMP1_InterruptHandler)(void);
 # 58 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/fvr.h" 1
+# 93 "./mcc_generated_files/fvr.h"
+ void FVR_Initialize(void);
+# 127 "./mcc_generated_files/fvr.h"
+_Bool FVR_IsOutputReady(void);
+# 59 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/ccp4.h" 1
 # 80 "./mcc_generated_files/ccp4.h"
 typedef union CCPR4Reg_tag
@@ -4581,13 +4588,6 @@ void CCP4_Initialize(void);
 void CCP4_CaptureISR(void);
 # 180 "./mcc_generated_files/ccp4.h"
  void CCP4_SetCallBack(void (*customCallBack)(uint16_t));
-# 59 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/fvr.h" 1
-# 93 "./mcc_generated_files/fvr.h"
- void FVR_Initialize(void);
-# 127 "./mcc_generated_files/fvr.h"
-_Bool FVR_IsOutputReady(void);
 # 60 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/dac.h" 1
@@ -4807,7 +4807,7 @@ void WDT_Initialize(void);
 # 2 "ledMatrix.c" 2
 
 # 1 "./ledMatrix.h" 1
-# 13 "./ledMatrix.h"
+# 16 "./ledMatrix.h"
 uint8_t matrix[8];
 
 
@@ -4865,23 +4865,11 @@ void txMAX7219(uint8_t addr0, uint8_t dat0){
 }
 
 void initMAX7219(){
-
-    txMAX7219(0x09,0x00);
-
-    txMAX7219(0x0A,0x00);
-
-    txMAX7219(0x0C,0x00);
-
-    txMAX7219(0x0B,0x07);
-
-    txMAX7219(0x0C,0x01);
-
+    TRISB = TRISB & 0b11111101;
     txMAX7219(0x0F,0x01);
     _delay((unsigned long)((1000)*(8000000/4000.0)));
-
     txMAX7219(0x0F,0x00);
-
-    txMAX7219(0x0C,0x01);
+# 108 "ledMatrix.c"
 }
 
 void setMatrix(uint8_t pos, uint8_t val){

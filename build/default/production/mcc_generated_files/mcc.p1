@@ -14,12 +14,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 mcc_generated_files/cmp2.h
 [; ;mcc_generated_files/cmp2.h: 92: void CMP2_Initialize(void);
 [v _CMP2_Initialize `(v ~T0 @X0 0 ef ]
-"93 mcc_generated_files/dac.h
-[; ;mcc_generated_files/dac.h: 93: void DAC_Initialize(void);
-[v _DAC_Initialize `(v ~T0 @X0 0 ef ]
 "93 mcc_generated_files/fvr.h
 [; ;mcc_generated_files/fvr.h: 93:  void FVR_Initialize(void);
 [v _FVR_Initialize `(v ~T0 @X0 0 ef ]
+"93 mcc_generated_files/dac.h
+[; ;mcc_generated_files/dac.h: 93: void DAC_Initialize(void);
+[v _DAC_Initialize `(v ~T0 @X0 0 ef ]
 "104 mcc_generated_files/tmr4.h
 [; ;mcc_generated_files/tmr4.h: 104: void TMR4_Initialize(void);
 [v _TMR4_Initialize `(v ~T0 @X0 0 ef ]
@@ -35,12 +35,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "92 mcc_generated_files/cmp1.h
 [; ;mcc_generated_files/cmp1.h: 92: void CMP1_Initialize(void);
 [v _CMP1_Initialize `(v ~T0 @X0 0 ef ]
-"123 mcc_generated_files/ccp4.h
-[; ;mcc_generated_files/ccp4.h: 123: void CCP4_Initialize(void);
-[v _CCP4_Initialize `(v ~T0 @X0 0 ef ]
 "136 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 136: void ADC_Initialize(void);
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
+"123 mcc_generated_files/ccp4.h
+[; ;mcc_generated_files/ccp4.h: 123: void CCP4_Initialize(void);
+[v _CCP4_Initialize `(v ~T0 @X0 0 ef ]
 "97 mcc_generated_files/pwm3.h
 [; ;mcc_generated_files/pwm3.h: 97: void PWM3_Initialize(void);
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
@@ -560,11 +560,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 57:     CMP2_Initialize();
 [e ( _CMP2_Initialize ..  ]
 "58
-[; ;mcc_generated_files/mcc.c: 58:     DAC_Initialize();
-[e ( _DAC_Initialize ..  ]
-"59
-[; ;mcc_generated_files/mcc.c: 59:     FVR_Initialize();
+[; ;mcc_generated_files/mcc.c: 58:     FVR_Initialize();
 [e ( _FVR_Initialize ..  ]
+"59
+[; ;mcc_generated_files/mcc.c: 59:     DAC_Initialize();
+[e ( _DAC_Initialize ..  ]
 "60
 [; ;mcc_generated_files/mcc.c: 60:     TMR4_Initialize();
 [e ( _TMR4_Initialize ..  ]
@@ -581,11 +581,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/mcc.c: 64:     CMP1_Initialize();
 [e ( _CMP1_Initialize ..  ]
 "65
-[; ;mcc_generated_files/mcc.c: 65:     CCP4_Initialize();
-[e ( _CCP4_Initialize ..  ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     ADC_Initialize();
+[; ;mcc_generated_files/mcc.c: 65:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
+"66
+[; ;mcc_generated_files/mcc.c: 66:     CCP4_Initialize();
+[e ( _CCP4_Initialize ..  ]
 "67
 [; ;mcc_generated_files/mcc.c: 67:     PWM3_Initialize();
 [e ( _PWM3_Initialize ..  ]

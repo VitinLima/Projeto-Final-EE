@@ -37,15 +37,11 @@ channel_FVR 31
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "74 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
 [v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
-[v i1_txMAX7219 txMAX7219 `(v  1 e 1 0 ]
 "85
 [v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
-"105
+"110
 [v _setMatrix setMatrix `(v  1 e 1 0 ]
 [v i1_setMatrix setMatrix `(v  1 e 1 0 ]
-"115
-[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
-[v i1_sendMatrix sendMatrix `(v  1 e 1 0 ]
 "57 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
 [v _sendMotor sendMotor `(v  1 e 1 0 ]
 [v i1_sendMotor sendMotor `(v  1 e 1 0 ]
@@ -167,7 +163,6 @@ channel_FVR 31
 [v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
 "131
 [v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
-[v i1_SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
 "64 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "108
@@ -219,7 +214,7 @@ channel_FVR 31
 [v _TMR6_SetInterruptHandler TMR6_SetInterruptHandler `(v  1 e 1 0 ]
 "151
 [v _TMR6_DefaultInterruptHandler TMR6_DefaultInterruptHandler `(v  1 e 1 0 ]
-"13 C:\Users\160047412\Desktop\ProjetoFinal.X/ledMatrix.h
+"16 C:\Users\160047412\Desktop\ProjetoFinal.X/ledMatrix.h
 [v _matrix matrix `[8]uc  1 e 8 0 ]
 [s S347 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
@@ -238,7 +233,7 @@ channel_FVR 31
 ]
 [u S361 . 1 `S347 1 . 1 0 `S356 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES361  1 e 1 @11 ]
-[s S1579 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1575 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -248,8 +243,8 @@ channel_FVR 31
 `uc 1 RA7 1 0 :1:7 
 ]
 "447
-[u S1588 . 1 `S1579 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1588  1 e 1 @12 ]
+[u S1584 . 1 `S1575 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1584  1 e 1 @12 ]
 [s S81 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -448,7 +443,7 @@ channel_FVR 31
 [v _LATAbits LATAbits `VES1544  1 e 1 @268 ]
 "2097
 [v _LATB LATB `VEuc  1 e 1 @269 ]
-[s S1731 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S1729 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -458,8 +453,8 @@ channel_FVR 31
 `uc 1 LATB7 1 0 :1:7 
 ]
 "2114
-[u S1740 . 1 `S1731 1 . 1 0 ]
-[v _LATBbits LATBbits `VES1740  1 e 1 @269 ]
+[u S1738 . 1 `S1729 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1738  1 e 1 @269 ]
 "2159
 [v _CM1CON0 CM1CON0 `VEuc  1 e 1 @273 ]
 "2216
@@ -478,7 +473,7 @@ channel_FVR 31
 [v _BORCON BORCON `VEuc  1 e 1 @278 ]
 "2458
 [v _FVRCON FVRCON `VEuc  1 e 1 @279 ]
-[s S1792 . 1 `uc 1 ADFVR0 1 0 :1:0 
+[s S1791 . 1 `uc 1 ADFVR0 1 0 :1:0 
 `uc 1 ADFVR1 1 0 :1:1 
 `uc 1 CDAFVR0 1 0 :1:2 
 `uc 1 CDAFVR1 1 0 :1:3 
@@ -488,11 +483,11 @@ channel_FVR 31
 `uc 1 FVREN 1 0 :1:7 
 ]
 "2479
-[s S1801 . 1 `uc 1 ADFVR 1 0 :2:0 
+[s S1800 . 1 `uc 1 ADFVR 1 0 :2:0 
 `uc 1 CDAFVR 1 0 :2:2 
 ]
-[u S1804 . 1 `S1792 1 . 1 0 `S1801 1 . 1 0 ]
-[v _FVRCONbits FVRCONbits `VES1804  1 e 1 @279 ]
+[u S1803 . 1 `S1791 1 . 1 0 `S1800 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES1803  1 e 1 @279 ]
 "2534
 [v _DACCON0 DACCON0 `VEuc  1 e 1 @280 ]
 "2595
@@ -764,9 +759,9 @@ channel_FVR 31
 "233 C:\Users\160047412\Desktop\ProjetoFinal.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"265
-[v main@receivedData receivedData `uc  1 a 1 7 ]
-"280
+"268
+[v main@receivedData receivedData `uc  1 a 1 9 ]
+"283
 } 0
 "85
 [v _updateMotor updateMotor `(v  1 e 1 0 ]
@@ -796,20 +791,20 @@ channel_FVR 31
 [v updateMatrix@direction direction `uc  1 a 1 6 ]
 "118
 } 0
-"105 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
+"110 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
 [v _setMatrix setMatrix `(v  1 e 1 0 ]
 {
 [v setMatrix@pos pos `uc  1 a 1 wreg ]
-"110
+"115
 [v setMatrix@i i `uc  1 a 1 5 ]
-"109
+"114
 [v setMatrix@eeAdd eeAdd `uc  1 a 1 4 ]
-"105
+"110
 [v setMatrix@pos pos `uc  1 a 1 wreg ]
 [v setMatrix@val val `uc  1 p 1 1 ]
-"109
+"114
 [v setMatrix@pos pos `uc  1 a 1 3 ]
-"113
+"118
 } 0
 "211 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/memory.c
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
@@ -820,17 +815,10 @@ channel_FVR 31
 [v DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 0 ]
 "221
 } 0
-"115 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
-[v _sendMatrix sendMatrix `(v  1 e 1 0 ]
-{
-"116
-[v sendMatrix@i i `uc  1 a 1 4 ]
-"123
-} 0
-"85
+"85 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
 [v _initMAX7219 initMAX7219 `(v  1 e 1 0 ]
 {
-"103
+"108
 } 0
 "74
 [v _txMAX7219 txMAX7219 `(v  1 e 1 0 ]
@@ -1114,7 +1102,7 @@ channel_FVR 31
 [v _TMR0_Interrupt TMR0_Interrupt `(v  1 e 1 0 ]
 {
 "147
-[v TMR0_Interrupt@i_1694 i `i  1 a 2 10 ]
+[v TMR0_Interrupt@i_1692 i `i  1 a 2 10 ]
 "130
 [v TMR0_Interrupt@i i `i  1 a 2 8 ]
 "137
@@ -1264,20 +1252,20 @@ channel_FVR 31
 [v i1updateMatrix@direction direction `uc  1 a 1 6 ]
 "118
 } 0
-"105 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
+"110 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
 [v i1_setMatrix setMatrix `(v  1 e 1 0 ]
 {
 [v i1setMatrix@pos pos `uc  1 a 1 wreg ]
-"110
+"115
 [v i1setMatrix@i i `uc  1 a 1 5 ]
-"109
+"114
 [v i1setMatrix@eeAdd eeAdd `uc  1 a 1 4 ]
-"105
+"110
 [v i1setMatrix@pos pos `uc  1 a 1 wreg ]
 [v i1setMatrix@val val `uc  1 p 1 1 ]
-"109
+"114
 [v i1setMatrix@pos pos `uc  1 a 1 3 ]
-"113
+"118
 } 0
 "211 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/memory.c
 [v i1_DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
@@ -1287,31 +1275,6 @@ channel_FVR 31
 "213
 [v i1DATAEE_ReadByte@bAdd bAdd `uc  1 a 1 0 ]
 "221
-} 0
-"115 C:\Users\160047412\Desktop\ProjetoFinal.X\ledMatrix.c
-[v i1_sendMatrix sendMatrix `(v  1 e 1 0 ]
-{
-"116
-[v i1sendMatrix@i i `uc  1 a 1 4 ]
-"123
-} 0
-"74
-[v i1_txMAX7219 txMAX7219 `(v  1 e 1 0 ]
-{
-[v i1txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
-[v i1txMAX7219@addr0 addr0 `uc  1 a 1 wreg ]
-[v i1txMAX7219@dat0 dat0 `uc  1 p 1 1 ]
-[v i1txMAX7219@addr0 addr0 `uc  1 a 1 2 ]
-"83
-} 0
-"131 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/spi1.c
-[v i1_SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
-{
-[v i1SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
-[v i1SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
-"133
-[v i1SPI1_WriteByte@byte byte `uc  1 a 1 0 ]
-"134
 } 0
 "87 C:\Users\160047412\Desktop\ProjetoFinal.X\mcc_generated_files/tmr6.c
 [v _TMR6_StartTimer TMR6_StartTimer `(v  1 e 1 0 ]

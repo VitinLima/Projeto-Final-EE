@@ -4561,6 +4561,13 @@ void CMP1_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*CMP1_InterruptHandler)(void);
 # 58 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/fvr.h" 1
+# 93 "mcc_generated_files/fvr.h"
+ void FVR_Initialize(void);
+# 127 "mcc_generated_files/fvr.h"
+_Bool FVR_IsOutputReady(void);
+# 59 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/ccp4.h" 1
 # 80 "mcc_generated_files/ccp4.h"
 typedef union CCPR4Reg_tag
@@ -4581,13 +4588,6 @@ void CCP4_Initialize(void);
 void CCP4_CaptureISR(void);
 # 180 "mcc_generated_files/ccp4.h"
  void CCP4_SetCallBack(void (*customCallBack)(uint16_t));
-# 59 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/fvr.h" 1
-# 93 "mcc_generated_files/fvr.h"
- void FVR_Initialize(void);
-# 127 "mcc_generated_files/fvr.h"
-_Bool FVR_IsOutputReady(void);
 # 60 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/dac.h" 1
@@ -4816,15 +4816,15 @@ void SYSTEM_Initialize(void)
     OSCILLATOR_Initialize();
     WDT_Initialize();
     CMP2_Initialize();
-    DAC_Initialize();
     FVR_Initialize();
+    DAC_Initialize();
     TMR4_Initialize();
     TMR2_Initialize();
     TMR0_Initialize();
     TMR6_Initialize();
     CMP1_Initialize();
-    CCP4_Initialize();
     ADC_Initialize();
+    CCP4_Initialize();
     PWM3_Initialize();
     TMR1_Initialize();
     EUSART_Initialize();
