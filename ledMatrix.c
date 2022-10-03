@@ -119,8 +119,10 @@ void sendMatrix(){
             nb |= b&0x01;
             b >>= 1;
         }
+#else
+        uint8_t nb = b;
 #endif
-        txMAX7219(i+1,b);
+        txMAX7219(i+1,nb);
     }
 }
 
