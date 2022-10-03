@@ -85,7 +85,6 @@ void sendMotor(){
 void updateMotor(){
     if(currentFloor==targetFloor){
         motorState = 0;
-        targetFloor = 1;
     } else if(currentFloor < targetFloor){
         if(motorState == 2){
             directionFlag = 1;
@@ -201,6 +200,7 @@ void S2_Interrupt(){
     if(targetFloor == 2){
         floorFlag = 1;
         TMR6_StartTimer();
+        targetFloor = 1;
     }
     currentFloor = 2;
     updateMotor();
@@ -211,6 +211,7 @@ void S3_Interrupt(){
     if(targetFloor == 3){
         floorFlag = 1;
         TMR6_StartTimer();
+        targetFloor = 1;
     }
     currentFloor = 3;
     updateMotor();
@@ -221,6 +222,7 @@ void S4_Interrupt(){
     if(targetFloor == 4){
         floorFlag = 1;
         TMR6_StartTimer();
+        targetFloor = 1;
     }
     currentFloor = 4;
     updateMotor();
