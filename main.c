@@ -114,7 +114,7 @@ void updateMatrix(){
     }
 
     setMatrix(4, direction);
-    sendMatrix();
+//    sendMatrix();
 }
 
 void TMR0_Interrupt(){
@@ -243,6 +243,12 @@ void main(void)
     IOCBF3_SetInterruptHandler(S2_Interrupt);
     CMP1_SetInterruptHandler(S3_Interrupt); // Interrupção por comparação
     CMP2_SetInterruptHandler(S4_Interrupt); // Interrupção por comparação
+    
+    initMAX7219();
+    DIR_SetHigh();
+    PWM3_LoadDutyValue(409);
+    __delay_ms(2000);
+    updateMotor();
 
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
@@ -258,9 +264,6 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    
-    initMAX7219();
-    updateMotor();
     
     uint8_t receivedData = 0;
     
