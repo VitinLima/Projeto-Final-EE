@@ -72,38 +72,26 @@ __EEPROM_DATA(
         0b00011000);      
 
 void txMAX7219(uint8_t addr0, uint8_t dat0){
-    CS_SetLow();
+    LATBbits.LATB1 = 0;
     SPI1_WriteByte(addr0);
     while(!PIR1bits.SSP1IF);
     PIR1bits.SSP1IF = 0;
     SPI1_WriteByte(dat0);
     while(!PIR1bits.SSP1IF);
     PIR1bits.SSP1IF = 0;
-    CS_SetHigh();
+    LATBbits.LATB1 = 1;
 }
 
 void initMAX7219(){
+    txMAX7219(0x09,0x00); // Decode mode = 0
+    txMAX7219(0x0A,0x00); // Intensity 17/32
+    txMAX7219(0x0C,0x00); // Shutdown mode = 0
+    txMAX7219(0x0B,0x07); // Scan Limit
+    txMAX7219(0x0C,0x01); // Shutdown mode = 1
     txMAX7219(0x0F,0x01); // Display-Test = 1
     __delay_ms(1000);
     txMAX7219(0x0F,0x00); // Display-Test = 0
-    
-//    // Decode mode = 0
-//    txMAX7219(0x09,0x00);
-//    // Intensity 17/32
-//    txMAX7219(0x0A,0x00);
-//    // Shutdown mode = 0
-//    txMAX7219(0x0C,0x00);
-//    // Scan Limit
-//    txMAX7219(0x0B,0x07);
-//    // Shutdown mode = 1
-//    txMAX7219(0x0C,0x01);
-//    // Display-Test = 1
-//    txMAX7219(0x0F,0x01);
-//    __delay_ms(1000);
-//    // Display-Test = 0
-//    txMAX7219(0x0F,0x00);
-//    // Shutdown mode = 1
-//    txMAX7219(0x0C,0x01);
+    txMAX7219(0x0C,0x00); // Shutdown mode = 0
 }
 
 void setMatrix(uint8_t pos, uint8_t val){

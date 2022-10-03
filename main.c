@@ -148,8 +148,6 @@ void TMR0_Interrupt(){
             EUSART_Write(data_tx[i]);
         }
     }
-//    txMAX7219(0x0F,0x01); // Display-Test = 1
-//    txMAX7219(0x0F,0x00); // Display-Test = 0
 }
 
 void TMR4_Interrupt(){ // Espera de 500 ms para mudança de direção
@@ -260,6 +258,10 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    
+    LATBbits.LATB1 = 1;
+    TRISBbits.TRISB1 = 0;
+    SSP1CON1bits.SSPEN = 1;
     
     DIR_SetHigh();
     PWM3_LoadDutyValue(409);
