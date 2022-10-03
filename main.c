@@ -127,7 +127,7 @@ void TMR0_Interrupt(){
     //0.83 mm between pulses
     //4 ns timer in timer 1
     uint32_t v = 0;
-    for(int i = 0; i < 16; i++){
+    for(uint8_t i = 0; i < 16; i++){
         v += velocity[i];
     }
     v = v>>4;
@@ -144,7 +144,7 @@ void TMR0_Interrupt(){
     data_tx[3] = t<<1 & 0x7F;
     
     if(EUSART_is_tx_ready()){
-        for(int i = 0; i<4; i++){
+        for(uint8_t i = 0; i<4; i++){
             EUSART_Write(data_tx[i]);
         }
     }

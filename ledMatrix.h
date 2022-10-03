@@ -9,6 +9,7 @@
 #define	LEDMATRIX_H
 
 #define CAMERA_FLIP 1
+#define VERTICAL_FLIP 1
 
 uint8_t matrix[8];  ///< Array que vai armazenar o que será enviado para as matrizes de LEDs (MAX7219). São 8 columnas ou registradores (1 matriz) x 8 filas de LEDs cada.
 

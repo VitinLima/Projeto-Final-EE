@@ -106,11 +106,21 @@ void setMatrix(uint8_t pos, uint8_t val){
 
 void sendMatrix(){
     for(uint8_t i=0;i<8;i++){
+        uint8_t b;
 #if CAMERA_FLIP==1
-        txMAX7219(i+1,matrix[7-i]);
+        b = matrix[7-i];
 #else
-        txMAX7219(i+1,matrix[i]);
+        b = matrix[i];
 #endif
+#if VERTICAL_FLIP==1
+        uint8_t nb = 0x00;
+        for(uint8_t j = 0; j < 8; j++){
+            nb <<= 1;
+            nb |= b&0x01;
+            b >>= 1;
+        }
+#endif
+        txMAX7219(i+1,b);
     }
 }
 
