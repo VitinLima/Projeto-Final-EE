@@ -95,7 +95,7 @@ void initMAX7219(){
     txMAX7219(0x0C,0x01);
     // Display-Test = 1
     txMAX7219(0x0F,0x01);
-    __delay_ms(1000);
+//    __delay_ms(1000);
     // Display-Test = 0
     txMAX7219(0x0F,0x00);
     // Shutdown mode = 1
