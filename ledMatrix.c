@@ -83,6 +83,7 @@ void txMAX7219(uint8_t addr0, uint8_t dat0){
 }
 
 void initMAX7219(){
+    TRISB.TRISB1 = 0;
     txMAX7219(0x0F,0x01); // Display-Test = 1
     __delay_ms(1000);
     txMAX7219(0x0F,0x00); // Display-Test = 0
