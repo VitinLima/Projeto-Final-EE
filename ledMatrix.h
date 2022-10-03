@@ -10,9 +10,6 @@
 
 #define CAMERA_FLIP 1
 
-#define CS_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
-#define CS_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
-
 uint8_t matrix[8];  ///< Array que vai armazenar o que será enviado para as matrizes de LEDs (MAX7219). São 8 columnas ou registradores (1 matriz) x 8 filas de LEDs cada.
 
 /**
